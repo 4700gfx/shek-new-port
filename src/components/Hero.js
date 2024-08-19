@@ -4,7 +4,7 @@ import emoji from '../assets/images/emoji1.png';
 const Hero = () => {
   return (
     <section>
-      <div className='hero-container bg-darkRed h-auto w-11/12 md:w-4/5 p-4 md:p-8 lg:p-10 my-10 mx-auto flex flex-col lg:flex-row justify-center items-center rounded-2xl'>
+      <div className='hero-container bg-darkRed h-auto w-11/12 md:w-4/5 p-4 md:p-8 lg:p-10 my-10 mx-auto flex flex-col lg:flex-row justify-center items-center rounded-3xl'>
         <img className='w-3/4 mt-10 lg:w-auto lg:mr-10 mb-6 lg:mb-0' src={emoji} alt="hero-content" />
         <div className='hero-text flex flex-col w-full lg:w-1/2 text-center lg:text-left'>
           <h1 className='font-roboto font-medium text-4xl md:text-5xl lg:text-7xl my-2 bg-gradient-to-r from-deepRed to-gray-400 bg-clip-text text-transparent'>
