@@ -8,7 +8,7 @@ function App() {
     <div>
     <Navbar></Navbar>
     <Hero></Hero>
-
+    <TechSection></TechSection>
     </div>
   );
 }
