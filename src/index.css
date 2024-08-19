@@ -4,9 +4,12 @@
 
 body {
   font-family: "Hanken Grotesk", system-ui;
-  background-color: hsl(0, 81%, 20%);
+  background: linear-gradient(to bottom, hsl(0, 86%, 17%), rgb(37, 36, 36));
   color: white;
+  margin: 0; /* Ensure no margin around the body */
+
 }
+
 
 /* Keyframes for seamless scrolling */
 @keyframes scroll {

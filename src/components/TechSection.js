@@ -29,7 +29,7 @@ const TechSection = () => {
   return (
     <section className="overflow-hidden w-4/5 mx-auto">
       <div className="flex flex-col items-center">
-        <h1 className="font-roboto font-bold text-5xl mt-8 mb-4">Technologies Used:</h1>
+        <h1 className="font-roboto font-bold text-5xl mt-4 mb-4">Technologies Used:</h1>
         <div className="scrolling-wrapper">
           <div className="scrolling-content">
             <div className="scrolling-content-inner">
@@ -38,7 +38,7 @@ const TechSection = () => {
                   key={index}
                   src={icon}
                   alt={`icon-${index}`}
-                  className="h-32 w-32 mx-4 mt-16"
+                  className="h-32 w-32 mx-4 mt-16 mb-2"
                 />
               ))}
             </div>
@@ -48,7 +48,7 @@ const TechSection = () => {
                   key={index + icons.length}
                   src={icon}
                   alt={`icon-${index + icons.length}`}
-                  className="h-32 w-32 mx-4 mt-16"
+                  className="h-32 w-32 mx-4 mt-16 mb-2"
                 />
               ))}
             </div>
