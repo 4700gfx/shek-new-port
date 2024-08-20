@@ -11,47 +11,43 @@ import chefsous2 from '../assets/images/chefsous2.png';
 const Project = () => {
   const projects = [
     {
-      name: 'Lioness Nails Landing Page',
+      name: 'Lioness Nails Landing Page 💅🏽',
       images: [lionessnails1, lionessnails2], 
       description: 'This was a landing page I created for a client. She had her Shopify store via Shopify and she wanted to rebrand her website into a custom site. I used Vanilla JavaScript along with the Shopify API to connect her store to the website. This took about 250 lines of code.',
-      tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS'],
+      tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS', '🧑🏿‍💻 Figma'],
       links: [
-        { label: 'View Site', url: 'https://example.com/lionessnails' },
-        { label: 'GitHub Repo', url: 'https://github.com/username/lionessnails' }
+        { label: 'View Site', url: 'https://lioness-nails-new-page.vercel.app/' },
+        { label: 'GitHub Repo', url: 'https://github.com/4700gfx/Lioness-Nails-New-Page' }
       ]
     },
-
-
     {
-      name: 'Reelmates: Movie Database & Bucket List App',
+      name: 'Reelmates: Movie Database & Bucket List App 🍿',
       images: [reelmate1, reelmate2],
       description: 'This was a Project Application I created for personal use. I wanted to create an application that keeps track of all the different shows and movies that I would like to watch. This is a full stack application that includes React for the front end, and Firebase for the backend along with the TMBD API for all of the different API queries.',
-      tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS'],
+      tags: ['⚛️ React', '💻 HTML', '🖥️ CSS', '📶 API'],
       links: [
-        { label: 'View Site', url: 'https://example.com/reelmates' },
-        { label: 'GitHub Repo', url: 'https://github.com/username/reelmates' }
+        { label: 'View Site', url: 'https://reelmate-movie-app.vercel.app/' },
+        { label: 'GitHub Repo', url: 'https://github.com/4700gfx/reelmate-movie-app' }
       ]
     },
-    // Add more projects here...
     {
-      name: 'Budgetify: Budget Planning Application',
+      name: 'Budgetify: Budget Planning Application 💵',
       images: [budgetify1, budgetify2],
-      description: 'This was a Project Application I created for personal use. I wanted to create an application that keeps track of all the different shows and movies that I would like to watch. This is a full stack application that includes React for the front end, and Firebase for the backend along with the TMBD API for all of the different API queries.',
+      description: 'This was an application that I designed to keep track of some of my expenses for my monthly budget, including Deposits and Savings. This was creating using mainly Vanilla JavaScript. The UI as well as other front-end components were created from scratch. This project is 250 lines of code.',
       tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS'],
       links: [
-        { label: 'View Site', url: 'https://example.com/reelmates' },
-        { label: 'GitHub Repo', url: 'https://github.com/username/reelmates' }
+        { label: 'View Site', url: 'https://budgetify-expense-tracker-project.vercel.app/' },
+        { label: 'GitHub Repo', url: 'https://github.com/4700gfx/Budgetify-Expense-Tracker-Project' }
       ]
     },
-
     {
-      name: 'Chef Sous: Recipe Creator Application',
+      name: 'Chef Sous: Recipe Creator Application 🧑🏿‍🍳',
       images: [chefsous1, chefsous2],
-      description: 'This was a Project Application I created for personal use. I wanted to create an application that keeps track of all the different shows and movies that I would like to watch. This is a full stack application that includes React for the front end, and Firebase for the backend along with the TMBD API for all of the different API queries.',
-      tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS'],
+      description: 'This project is one of my favorite projects. This was an introduction to APIs as I used the Edamam API to render different types of recipes based on different query that the user called. I also created the UI from a Figma file which allowed me to practice my CSS skills. This code was created in Vanilla JavaScript and was created with over 300 lines of code',
+      tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS', '📶 API'],
       links: [
-        { label: 'View Site', url: 'https://example.com/reelmates' },
-        { label: 'GitHub Repo', url: 'https://github.com/username/reelmates' }
+        { label: 'View Site', url: 'https://chef-sous-app.vercel.app/' },
+        { label: 'GitHub Repo', url: 'https://github.com/4700gfx/Chef-Sous-App' }
       ]
     },
   ];
@@ -59,7 +55,7 @@ const Project = () => {
   return (
     <section className='project-container w-11/12 md:w-4/5 mx-auto mt-18 mb-24'>
       <h1 className="text-center font-roboto font-bold text-3xl mt-20 sm:text-4xl md:text-5xl mb-10">Projects</h1>
-      <div className='projects-section grid grid-cols-1 md:grid-cols-2 gap-10'>
+      <div className='projects-section grid grid-cols-1 lg:grid-cols-2 gap-10'>
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
@@ -80,12 +76,12 @@ const ProjectCard = ({ project }) => {
   }, [project.images.length]);
 
   return (
-    <div className='project bg-warmGray shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row p-4'>
-      <div className='carousel relative w-full md:w-2/3'>
+    <div className='project bg-warmGray shadow-lg rounded-xl overflow-hidden flex flex-col lg:flex-row p-4'>
+      <div className='carousel relative w-full lg:w-2/3'>
         <img 
           src={project.images[currentImageIndex]} 
           alt={`${project.name} screenshot`} 
-          className='w-full h-84 my-20 md:h-76 object-cover rounded-lg'
+          className='w-full h-96 mt-10 lg:h-76 object-cover rounded-lg'
         />
         <div className='absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2'>
           {project.images.map((_, index) => (
@@ -97,13 +93,13 @@ const ProjectCard = ({ project }) => {
           ))}
         </div>
       </div>
-      <div className='p-5 flex flex-col justify-between w-full md:w-1/3'>
+      <div className='p-5 flex flex-col justify-between w-full lg:w-1/3'>
         <div>
-          <h2 className='text-xl md:text-2xl font-bold text-black mb-3'>{project.name}</h2>
+          <h2 className='text-xl lg:text-2xl font-bold text-black mb-3'>{project.name}</h2>
           <p className='text-white mb-3'>{project.description}</p>
           <div className='tags flex flex-wrap mb-4'>
             {project.tags.map((tag, index) => (
-              <span key={index} className='bg-darkRed text-white text-xs font-semibold mr-2 mb-2 px-2 py-1 rounded'>{tag}</span>
+              <span key={index} className='bg-darkRed text-white text-s font-semibold mr-2 mb-2 px-2 py-1 rounded'>{tag}</span>
             ))}
           </div>
           <div className='buttons flex flex-wrap'>
@@ -111,7 +107,7 @@ const ProjectCard = ({ project }) => {
               <a 
                 key={index} 
                 href={link.url} 
-                className='bg-darkRed text-white text-sm font-semibold mr-2 mb-2 px-4 py-2 rounded hover:bg-opacity-80 transition duration-200'
+                className='bg-darkRed text-white text-sm font-semibold mr-2 mb-2 px-4 py-2 rounded-full hover:bg-opacity-80 transition duration-200'
               >
                 {link.label}
               </a>
