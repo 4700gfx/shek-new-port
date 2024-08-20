@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className='bg-darkRed text-white flex items-center justify-between w-4/5 mx-auto my-5 rounded-xl p-3'>
+      <nav className='bg-darkRed text-white flex items-center justify-between w-4/5 mx-auto my-5 rounded-3xl p-3'>
         <img className='h-16 w-auto mb-2' src={logo} alt="logo" />
         {/* Hamburger Menu Button */}
         <button 
