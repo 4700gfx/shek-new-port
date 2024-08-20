@@ -1,3 +1,55 @@
 .App {
   text-align: center;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* components/ScrollToTopButton.css */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+}
+
+.scroll-to-top:hover {
+  background-color: #555;
+}
+
+/* App.css */
+/* Adjust the Hero section when the menu is open */
+
+
+
+/* Ensure the menu opens above other content */
+.menu-open nav {
+  position: relative;
+  z-index: 50;
+}
+
+/* Fixes for the ul positioning and hero margin when menu is open */
+.menu-open ~ #hero {
+  margin-top: 20rem; /* Adjust this value as needed */
+}
+
+/* Ensure the hero section has sufficient top margin when menu is open */
+.hero-container {
+  transition: margin-top 0.3s ease-in-out;
+}

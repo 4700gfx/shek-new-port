@@ -8,7 +8,31 @@ import budgetify2 from '../assets/images/budgetify2.png';
 import chefsous1 from '../assets/images/chefsous1.png';
 import chefsous2 from '../assets/images/chefsous2.png';
 
+
 const Project = () => {
+  const [inView, setInView] = useState(false);
+
+  const handleScroll = () => {
+    const element = document.getElementById('projects-section');
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+      setInView(true);
+    } else {
+      setInView(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const projects = [
     {
       name: 'Lioness Nails Landing Page 💅🏽',
@@ -53,18 +77,20 @@ const Project = () => {
   ];
 
   return (
-    <section className='project-container w-11/12 md:w-4/5 mx-auto mt-18 mb-24'>
-      <h1 className="text-center font-roboto font-bold text-3xl mt-20 sm:text-4xl md:text-5xl mb-10">Projects</h1>
+    <section id="projects-section" className='project-container w-11/12 md:w-4/5 mx-auto mt-18 mb-24'>
+      <h1 className={`text-center font-roboto font-bold text-3xl mt-20 sm:text-4xl md:text-5xl mb-10 ${inView ? 'animate-fade-in' : ''}`}>
+        Projects
+      </h1>
       <div className='projects-section grid grid-cols-1 lg:grid-cols-2 gap-10'>
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} inView={inView} />
         ))}
       </div>
     </section>
   );
 };
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, inView }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -76,7 +102,9 @@ const ProjectCard = ({ project }) => {
   }, [project.images.length]);
 
   return (
-    <div className='project bg-warmGray shadow-lg rounded-xl overflow-hidden flex flex-col lg:flex-row p-4'>
+    <div 
+      className={`project bg-warmGray shadow-lg rounded-xl overflow-hidden flex flex-col lg:flex-row p-4 ${inView ? 'animate-fade-in' : ''}`}
+    >
       <div className='carousel relative w-full lg:w-2/3'>
         <img 
           src={project.images[currentImageIndex]} 
@@ -95,11 +123,17 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className='p-5 flex flex-col justify-between w-full lg:w-1/3'>
         <div>
-          <h2 className='text-xl lg:text-2xl font-bold text-black mb-3'>{project.name}</h2>
-          <p className='text-white mb-3'>{project.description}</p>
+          <h2 className={`text-xl lg:text-2xl font-bold text-black mb-3 ${inView ? 'animate-fade-in-left' : ''}`}>
+            {project.name}
+          </h2>
+          <p className={`text-white mb-3 ${inView ? 'animate-fade-in-left' : ''}`}>
+            {project.description}
+          </p>
           <div className='tags flex flex-wrap mb-4'>
             {project.tags.map((tag, index) => (
-              <span key={index} className='bg-darkRed text-white text-s font-semibold mr-2 mb-2 px-2 py-1 rounded'>{tag}</span>
+              <span key={index} className={`bg-darkRed text-white text-s font-semibold mr-2 mb-2 px-2 py-1 rounded ${inView ? 'animate-fade-in-left' : ''}`}>
+                {tag}
+              </span>
             ))}
           </div>
           <div className='buttons flex flex-wrap'>
@@ -107,7 +141,7 @@ const ProjectCard = ({ project }) => {
               <a 
                 key={index} 
                 href={link.url} 
-                className='bg-darkRed text-white text-sm font-semibold mr-2 mb-2 px-4 py-2 rounded-full hover:bg-opacity-80 transition duration-200'
+                className={`bg-darkRed text-white text-sm font-semibold mr-2 mb-2 px-4 py-2 rounded-full hover:bg-opacity-80 transition duration-200 ${inView ? 'animate-fade-in-right' : ''}`}
               >
                 {link.label}
               </a>

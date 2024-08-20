@@ -8,15 +8,15 @@ const Navbar = () => {
 
   const tabs = {
     home: "Home",
+    techSection: "Tech Section",
     aboutMe: "About Me",
     experience: "Experience",
-    skills: "Skills",
     projects: "Projects",
   };
 
   return (
-    <header>
-      <nav className="bg-darkRed text-white flex items-center justify-between w-4/5 mx-auto my-5 rounded-3xl p-3">
+    <header className={isOpen ? 'menu-open' : ''}>
+      <nav className="bg-darkRed text-white flex items-center justify-between w-4/5 mx-auto my-5 rounded-3xl p-3 relative z-50">
         <img className="h-16 w-auto mb-2" src={logo} alt="logo" />
         {/* Hamburger Menu Button */}
         <button 
@@ -28,10 +28,10 @@ const Navbar = () => {
           </svg>
         </button>
         {/* Menu */}
-        <ul className={`mr-10 md:flex md:flex-row md:space-x-8 absolute md:relative bg-darkRed ${isOpen ? 'w-4/5' : 'hidden'} md:w-auto md:space-x-8 top-16 md:top-auto left-0 ${isOpen ? 'block' : 'hidden'} md:block ml-24`}>
+        <ul className={`mr-10 md:flex md:flex-row md:space-x-8 absolute md:relative bg-darkRed ${isOpen ? 'block' : 'hidden'} md:block left-0 md:left-auto top-16 md:top-auto w-full md:w-auto`}>
           {Object.keys(tabs).map((nav) => (
             <li key={nav} className="m-4 p-4 transition-transform duration-300 ease-in-out transform hover:bg-deepRed hover:rounded-full hover:text-white hover:scale-105">
-              {tabs[nav]}
+              <a href={`#${nav}`} className="block">{tabs[nav]}</a>
             </li>
           ))}
         </ul>

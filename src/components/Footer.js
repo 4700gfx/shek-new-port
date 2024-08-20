@@ -13,26 +13,25 @@ const Footer = () => {
             <h4 className="text-xl md:text-2xl font-semibold mb-4 text-black hover:text-gray-400">Main Website</h4>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-gray-400">Home</a></li>
-              <li><a href="#" className="hover:text-gray-400">About Us</a></li>
-              <li><a href="#" className="hover:text-gray-400">Featured Nails</a></li>
+              <li><a href="#" className="hover:text-gray-400">About Me</a></li>
+              <li><a href="#" className="hover:text-gray-400">Projects</a></li>
             </ul>
           </div>
 
           <div className="footer-column flex-1">
             <h4 className="text-xl md:text-2xl font-semibold mb-4 text-black hover:text-gray-400">Shop</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-gray-400">Hand Scrub</a></li>
-              <li><a href="#" className="hover:text-gray-400">Lioness's Cuticle Oil</a></li>
-              <li><a href="#" className="hover:text-gray-400">Lioness's Mini Cuticle</a></li>
+              <li><a href="#" className="hover:text-gray-400">Resume</a></li>
+              <li><a href="#" className="hover:text-gray-400">GitHub Repo</a></li>
+              <li><a href="#" className="hover:text-gray-400">LinkedIn</a></li>
             </ul>
           </div>
 
           <div className="footer-column flex-1">
             <h4 className="text-xl md:text-2xl font-semibold mb-4 text-black hover:text-gray-400">About Me</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-gray-400">Blog</a></li>
+              <li><a href="#" className="hover:text-gray-400">Contact Me</a></li>
               <li><a href="#" className="hover:text-gray-400">FAQs</a></li>
-              <li><a href="#" className="hover:text-gray-400">More Information</a></li>
             </ul>
           </div>
 

@@ -25,7 +25,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className='w-full max-w-7xl mx-auto py-10 px-4'>
+    <section className='experience w-full max-w-7xl mx-auto py-10 px-4'>
       <h1 className="text-center font-roboto font-bold text-3xl sm:text-4xl md:text-5xl mb-10">Experiences + Certificates</h1>
 
       {/* Experience Section */}
