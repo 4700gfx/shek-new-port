@@ -3,6 +3,7 @@ import emoji from '../assets/images/emoji1.png';
 
 const Hero = () => {
   const [isLeaving, setIsLeaving] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleScroll = () => {
     const heroSection = document.querySelector('.hero-container');
@@ -19,13 +20,17 @@ const Hero = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    // Check screen size on mount
+    setIsMobile(window.innerWidth <= 768); // 768px is a typical breakpoint for mobile
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <section id='hero'>
       <div
-        className={`hero-container bg-darkRed h-auto w-11/12 md:w-4/5 p-4 md:p-8 lg:p-10 my-10 mx-auto flex flex-col lg:flex-row justify-center items-center rounded-3xl ${!isLeaving ? 'fade-in-up' : 'fade-out'}`}
+        className={`hero-container bg-darkRed h-auto w-11/12 md:w-4/5 p-4 md:p-8 lg:p-10 my-10 mx-auto flex flex-col lg:flex-row justify-center items-center rounded-3xl ${
+          !isLeaving && !isMobile ? 'fade-in-up' : isMobile ? '' : 'fade-out'
+        }`}
       >
         <img
           className='w-3/4 mt-10 lg:w-auto lg:mr-10 mb-6 lg:mb-0'
