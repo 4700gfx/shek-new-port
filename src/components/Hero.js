@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import emoji from '../assets/images/emoji1.png';
+import logo from '../assets/images/4700gfxwhite.png';
 
 const Hero = () => {
   const [isLeaving, setIsLeaving] = useState(false);
@@ -34,30 +34,30 @@ const Hero = () => {
       >
         <img
           className='w-3/4 mt-10 lg:w-auto lg:mr-10 mb-6 lg:mb-0'
-          src={emoji}
+          src={logo}
           alt="hero-content"
         />
         <div className='hero-text flex flex-col w-full lg:w-1/2 text-center lg:text-left'>
-          <h1 className='font-roboto font-medium text-4xl md:text-5xl lg:text-7xl my-2 bg-gradient-to-r from-deepRed to-gray-400 bg-clip-text text-transparent'>
-            Hi! My Name is Shekelton!
+          <h1 className='font-roboto font-medium text-4xl md:text-5xl lg:text-7xl my-2 bg-gradient-to-r from-white to-gray-900 bg-clip-text text-transparent'>
+            Welcome To 4700 GFX Studios!
           </h1>
           <h2 className='font-roboto font-semibold text-xl md:text-2xl lg:text-3xl my-1'>
-            React & Python Developer 💻
+            Brand & Web Design Agency 💻
           </h2>
           <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-base'>
-            I specialize in building dynamic, user-centric applications using technologies like React, Node.js, and Tailwind CSS. I love turning ideas into reality with clean, efficient code and visually appealing designs. Whether it's front-end development, back-end logic, or UI/UX design, I'm passionate about crafting seamless digital experiences that leave a lasting impact. Let's build something amazing together!
+          At 4700 GFX Studios, we specialize in building dynamic, user-centric web applications using modern technologies like React, Node.js, and Tailwind CSS. Our team is passionate about transforming ideas into powerful digital solutions through clean, efficient code and visually striking designs for a reasonable budget. From front-end interfaces to back-end architecture and intuitive UI/UX experiences, we’re dedicated to crafting seamless, impactful digital products. Let’s create something extraordinary together.
           </p>
           <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-base'>
-            With a keen eye for detail and a commitment to excellence, I leverage tools like Figma to create intuitive interfaces and Tailwind CSS to ensure responsive, modern designs. My experience with React and Node.js allows me to build robust, scalable applications that perform seamlessly across devices. I thrive in collaborative environments where I can contribute my skills and learn from others. Let's connect and explore how we can bring your vision to life!
+          With a keen eye for detail and a commitment to quality, 4700 GFX Studio leverages tools like Figma, React, and Tailwind CSS to design and develop custom landing pages and digital solutions for Small and Medium Businesses. Ready to bring your vision to life? Click the button below to get started.
           </p>
           <div className='hero-buttons flex flex-col lg:flex-row mt-4'>
             <button
-              className='bg-richRed mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-deepRed transition duration-300'
+              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-grey-900 transition duration-300'
             >
               Download
             </button>
             <button
-              className='bg-richRed w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-deepRed transition duration-300'
+              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-grey-900 transition duration-300'
             >
               Projects
             </button>

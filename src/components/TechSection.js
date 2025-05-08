@@ -29,7 +29,7 @@ const TechSection = () => {
   return (
     <section className="overflow-hidden w-4/5 mx-auto">
       <div className="flex flex-col items-center">
-        <h1 className="font-roboto font-bold text-5xl mt-4 mb-4">Technologies Used:</h1>
+
         <div className="scrolling-wrapper">
           <div className="scrolling-content">
             <div className="scrolling-content-inner">

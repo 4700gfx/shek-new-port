@@ -4,9 +4,18 @@
 
 body {
   font-family: "Hanken Grotesk", system-ui;
-  background: linear-gradient(to bottom, hsl(0, 86%, 17%), rgb(37, 36, 36));
+  background: linear-gradient(
+      135deg,
+      rgba(23, 23, 16, 0.4),
+      rgba(45, 46, 50, 0.3),
+      rgba(110, 112, 117, 0.2)
+    );
+  /* background-color: #171710; Fallback background color */
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
   color: white;
-  margin: 0; /* Ensure no margin around the body */
+  margin: 0;
   scroll-behavior: smooth;
 }
 
