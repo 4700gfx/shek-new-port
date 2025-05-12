@@ -128,7 +128,7 @@ const ProjectCard = ({ project, inView }) => {
           <h2 className={`text-xl lg:text-2xl font-bold text-black mb-3 ${inView ? 'animate-fade-in-left' : ''}`}>
             {project.name}
           </h2>
-          <p className={`text-white mb-3 ${inView ? 'animate-fade-in-left' : ''}`}>
+          <p className={`text-sm text-white mb-3 ${inView ? 'animate-fade-in-left' : ''}`}>
             {project.description}
           </p>
           <div className='tags flex flex-wrap mb-4'>
