@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/images/4700GFX.png';
+import logo from '../assets/images/4700gfxwhite.png';
 import Modal from './Modal';  // Make sure to import the Modal component
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <header className={isOpen ? 'menu-open' : ''}>
-      <nav className="bg-darkRed text-white flex items-center justify-between w-4/5 mx-auto my-5 rounded-3xl p-3 relative z-50">
+      <nav className="bg-darkRed text-white flex items-center justify-around w-4/5 mx-auto my-5 rounded-3xl p-5 relative z-50">
         <img className="h-16 w-auto mb-2" src={logo} alt="logo" />
         {/* Hamburger Menu Button */}
         <button 
@@ -30,7 +30,7 @@ const Navbar = () => {
         {/* Menu */}
         <ul className={`mr-10 md:flex md:flex-row md:space-x-8 absolute md:relative bg-darkRed ${isOpen ? 'block' : 'hidden'} md:block left-0 md:left-auto top-16 md:top-auto w-full md:w-auto`}>
           {Object.keys(tabs).map((nav) => (
-            <li key={nav} className="m-4 p-4 transition-transform duration-300 font-bold text-xl ease-in-out transform hover:bg-deepRed hover:rounded-full hover:text-white hover:scale-105">
+            <li key={nav} className="m-4 p-4 transition-transform duration-300 font-bold text-md ease-in-out transform hover:bg-gray-600 hover:rounded-full hover:text-white hover:scale-105">
               <a href={`#${nav}`} className="block">{tabs[nav]}</a>
             </li>
           ))}

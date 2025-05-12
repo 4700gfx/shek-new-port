@@ -44,20 +44,20 @@ const Hero = () => {
           <h2 className='font-roboto font-semibold text-xl md:text-2xl lg:text-3xl my-1'>
             Brand & Web Design Agency 💻
           </h2>
-          <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-base'>
+          <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-md'>
           At 4700 GFX Studios, we specialize in building dynamic, user-centric web applications using modern technologies like React, Node.js, and Tailwind CSS. Our team is passionate about transforming ideas into powerful digital solutions through clean, efficient code and visually striking designs for a reasonable budget. From front-end interfaces to back-end architecture and intuitive UI/UX experiences, we’re dedicated to crafting seamless, impactful digital products. Let’s create something extraordinary together.
           </p>
-          <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-base'>
+          <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-md'>
           With a keen eye for detail and a commitment to quality, 4700 GFX Studio leverages tools like Figma, React, and Tailwind CSS to design and develop custom landing pages and digital solutions for Small and Medium Businesses. Ready to bring your vision to life? Click the button below to get started.
           </p>
           <div className='hero-buttons flex flex-col lg:flex-row mt-4'>
             <button
-              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-grey-900 transition duration-300'
+              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-white hover:text-black hover:bg-grey-900 transition duration-300'
             >
               Download
             </button>
             <button
-              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-grey-900 transition duration-300'
+              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-white hover:text-black transition duration-300'
             >
               Projects
             </button>

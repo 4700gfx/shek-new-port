@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import reelmate1 from '../assets/images/reelmate1.png';
 import reelmate2 from '../assets/images/reelmate2.png';
-import lionessnails1 from '../assets/images/lionessnails1.png';
-import lionessnails2 from '../assets/images/lionessnails2.png';
+import braveguidance1 from '../assets/images/braveguidance1.png'
+import braveguidance2 from '../assets/images/braveguidance2.png'
+import labelpic1 from '../assets/images/label1.png'
+import labelpic2 from '../assets/images/label2.png'
 import budgetify1 from '../assets/images/budgetify1.png';
 import budgetify2 from '../assets/images/budgetify2.png';
 import chefsous1 from '../assets/images/chefsous1.png';
@@ -35,10 +37,10 @@ const Project = () => {
 
   const projects = [
     {
-      name: 'Lioness Nails Landing Page 💅🏽',
-      images: [lionessnails1, lionessnails2], 
-      description: 'This was a landing page I created for a client. She had her Shopify store via Shopify and she wanted to rebrand her website into a custom site. I used Vanilla JavaScript along with the Shopify API to connect her store to the website. This took about 250 lines of code.',
-      tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS', '🧑🏿‍💻 Figma'],
+      name: 'Brave Guidance Landing Page',
+      images: [braveguidance1, braveguidance2], 
+      description: 'This was a landing page I created for a client. She is a therapist that needed a landing site for interested clients to sign up and review her information. This was a fairly quick landing page that was created using React, Tailwind and Motion for some of the animations',
+      tags: ['⚛️ React', '💻 Tailwind CSS', '🧑🏿‍💻 Figma'],
       links: [
         { label: 'View Site', url: 'https://lioness-nails-new-page.vercel.app/' },
         { label: 'GitHub Repo', url: 'https://github.com/4700gfx/Lioness-Nails-New-Page' }
@@ -55,10 +57,10 @@ const Project = () => {
       ]
     },
     {
-      name: 'Budgetify: Budget Planning Application 💵',
-      images: [budgetify1, budgetify2],
-      description: 'This was an application that I designed to keep track of some of my expenses for my monthly budget, including Deposits and Savings. This was creating using mainly Vanilla JavaScript. The UI as well as other front-end components were created from scratch. This project is 250 lines of code.',
-      tags: ['🍦 Vanilla JavaScript', '💻 HTML', '🖥️ CSS'],
+      name: '4700 Enterprises: Label Website Landing Page',
+      images: [labelpic1, labelpic2],
+      description: 'This was an application that I designed for an independent record label called 4700 Enteprises. This was a multi-page layout that will include a Blog section, as well as other features as the label continues to grow. This was made with React and Tailwind CSS',
+      tags: ['⚛️ React', '💻 Tailwind CSS', '🧑🏿‍💻 Figma'],
       links: [
         { label: 'View Site', url: 'https://budgetify-expense-tracker-project.vercel.app/' },
         { label: 'GitHub Repo', url: 'https://github.com/4700gfx/Budgetify-Expense-Tracker-Project' }

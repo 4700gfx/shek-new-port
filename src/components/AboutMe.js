@@ -32,7 +32,7 @@ const AboutMe = () => {
           inView ? 'animate-fade-in-up' : ''
         }`}
       >
-        About Me:
+        What We Offer:
       </h1>
       <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6'>
         <div 
@@ -41,10 +41,10 @@ const AboutMe = () => {
           }`}
         >
           <h2 className='font-roboto font-bold text-xl sm:text-2xl text-center mb-2'>
-            2.5 Years of Experience
+            👨🏿‍🎨 Responsive and Modern Web Design
           </h2>
-          <p className="text-sm sm:text-base">
-            In 2021, I was inspired to create a website for my Record Label "4700 Enterprises". My initial approach was to create it using a no-code platform like Wix and SquareSpace. However, my curiosity enabled me to learn more to create a website using HTML, CSS, and JavaScript.
+          <p className="text-sm sm:text-md">
+            We focus on providing the most modern and up to date web designs to influence traffic and establish brand indentity. We use of the best tools to create various levels of UIs to provide the best experience for your audiences. 
           </p>
         </div>
 
@@ -54,10 +54,10 @@ const AboutMe = () => {
           }`}
         >
           <h2 className='font-roboto font-bold text-xl sm:text-2xl text-center mb-2'>
-            8 Years of Experience in CS, Data Entry & Social Media Management
+            💸 Affordable Digital Solutions for Small and Medium Businesses
           </h2>
-          <p className="text-sm sm:text-base">
-            Before my introduction to Software Engineering, I worked as a Customer Service Specialist for companies of different sizes. This helped me attain skills such as Data Entry and gaining proficiency in Excel and Outlook. My work in B2B Customer Services has allowed me to have a tenure as a Social Media Manager.
+          <p className="text-sm sm:text-md">
+            We offer different price points for every point of your entrepreunal career. Our team can help set up your first landing page and continually scale your website to fit any of your business needs. This allows for flexability in various budgets.
           </p>
         </div>
 
@@ -67,10 +67,10 @@ const AboutMe = () => {
           }`}
         >
           <h2 className='font-roboto font-bold text-xl sm:text-2xl text-center mb-2'>
-            Learning More Frameworks
+            🌱 Organic Growth through SEO and Anayltics 
           </h2>
-          <p className="text-sm sm:text-base">
-            After working with Vanilla JavaScript, as well as React, my interest in other frameworks has peaked. This includes Next.js, React Native, and more. I am always looking to add to my toolset of technologies as it increases my ability to create more web applications.
+          <p className="text-sm sm:text-md">
+            Our focus is create a great digital footprint for business to make your brand more accessible a wider audience. This include SEO and monthly Anayltics to ensure that your website is runniing at the best speeds possible while reaching the top of google searches. 
           </p>
         </div>
 
@@ -83,15 +83,15 @@ const AboutMe = () => {
             Additional Skills
           </h2>
           <div className='flex flex-wrap justify-center'>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>🖥️ JavaScript</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>🧫 React</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>📊 Microsoft Suite</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>⌨️ Node.js</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>💻 Python</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>☎️ Customer Service</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>📧 Email Correspondence</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>📈 Data Entry</span>
-            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-base'>📌 Social Media Management</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>🖥️ JavaScript</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>🧫 React</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>📊 Project Management</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>⌨️ Node.js</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>💻 Python</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>☎️ Customer Service</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>©️ Branding Consultation</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>📈 SEO & Analytics</span>
+            <span className='bg-white text-black w-auto px-3 py-1 mt-2 mr-2 rounded-full text-sm sm:text-md'>📌 Social Media Management</span>
           </div>
         </div>
       </div>
