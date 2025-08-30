@@ -10,6 +10,8 @@ import Experience from './components/Experience';
 import Project from './components/Project';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton'; // Import the ScrollToTopButton component
+import PricingComponent from './components/PricingComponent';
+import LeadMagnetsAndForms from './components/LeadMagnetsAndForms';
 
 function App() {
   useEffect(() => {
@@ -32,6 +34,11 @@ function App() {
       <section id="projects">
         <Project />
       </section>
+      <section id="techSection">
+        <TechSection />
+      </section>
+      <PricingComponent></PricingComponent>
+      <LeadMagnetsAndForms></LeadMagnetsAndForms>
       <Footer />
       <ScrollToTopButton /> {/* Add the ScrollToTopButton here */}
     </div>

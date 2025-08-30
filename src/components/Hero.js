@@ -28,7 +28,7 @@ const Hero = () => {
   return (
     <section id='hero'>
       <div
-        className={`hero-container bg-darkRed h-auto w-11/12 md:w-4/5 p-4 md:p-8 lg:p-10 my-10 mx-auto flex flex-col lg:flex-row justify-center items-center rounded-3xl ${
+        className={`hero-container bg-gradient-to-br from-gray-800 to-gray-900 h-auto w-11/12 md:w-4/5 p-4 md:p-8 lg:p-2 my-10 mx-auto flex flex-col lg:flex-row justify-center items-center rounded-3xl ${
           !isLeaving && !isMobile ? 'fade-in-up' : isMobile ? '' : 'fade-out'
         }`}
       >
@@ -38,30 +38,23 @@ const Hero = () => {
           alt="hero-content"
         />
         <div className='hero-text flex flex-col w-full lg:w-1/2 text-center lg:text-left'>
-          <h1 className='font-roboto font-medium text-4xl md:text-5xl lg:text-7xl my-2 bg-gradient-to-r from-white to-gray-900 bg-clip-text text-transparent'>
+          <h1 className='font-roboto font-medium text-4xl md:text-5xl lg:text-7xl my-2 bg-white bg-clip-text text-transparent'>
             Welcome To 4700 GFX Studios!
           </h1>
           <h2 className='font-roboto font-semibold text-xl md:text-2xl lg:text-3xl my-1'>
             Brand & Web Design Agency 💻
           </h2>
           <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-md'>
-          At 4700 GFX Studios, we specialize in building dynamic, user-centric web applications using modern technologies like React, Node.js, and Tailwind CSS. Our team is passionate about transforming ideas into powerful digital solutions through clean, efficient code and visually striking designs for a reasonable budget. From front-end interfaces to back-end architecture and intuitive UI/UX experiences, we’re dedicated to crafting seamless, impactful digital products. Let’s create something extraordinary together.
+            At 4700 GFX Studios, we design and develop modern, user-friendly websites and web applications that help businesses of all sizes—whether you’re just starting out or scaling to the next level. Our team blends clean, efficient code with sleek, responsive design to deliver digital solutions that don’t just look good—they work. From intuitive front-end experiences to reliable back-end systems, we make sure your online presence drives results without breaking your budget.
           </p>
-          <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-md'>
-          With a keen eye for detail and a commitment to quality, 4700 GFX Studio leverages tools like Figma, React, and Tailwind CSS to design and develop custom landing pages and digital solutions for Small and Medium Businesses. Ready to bring your vision to life? Click the button below to get started.
-          </p>
-          <div className='hero-buttons flex flex-col lg:flex-row mt-4'>
+          <h2 className='font-bold text-md'>Ready to bring your vision to life? Let’s get started today ⬇️.</h2>
             <button
-              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-white hover:text-black hover:bg-grey-900 transition duration-300'
+              className='bg-gray-600 text-white my-3 lg:mb-0 lg:mr-3 w-full lg:w-1/3 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-white hover:text-black hover:bg-grey-900 transition duration-300'
             >
-              Download
+            Schedule A Call 📞
             </button>
-            <button
-              className='bg-gray-500 text-white mb-3 lg:mb-0 lg:mr-3 w-full lg:w-1/6 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-white hover:text-black transition duration-300'
-            >
-              Projects
-            </button>
-          </div>
+
+          
         </div>
       </div>
     </section>

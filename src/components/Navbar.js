@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <header className={isOpen ? 'menu-open' : ''}>
-      <nav className="bg-darkRed text-white flex items-center justify-around w-4/5 mx-auto my-5 rounded-3xl p-5 relative z-50">
+      <nav className="bg-darkRed text-white flex items-center justify-around w-4/5 mx-auto my-3 rounded-3xl p-2 relative z-50">
         <img className="h-16 w-auto mb-2" src={logo} alt="logo" />
         {/* Hamburger Menu Button */}
         <button 
@@ -30,24 +30,24 @@ const Navbar = () => {
         {/* Menu */}
         <ul className={`mr-10 md:flex md:flex-row md:space-x-8 absolute md:relative bg-darkRed ${isOpen ? 'block' : 'hidden'} md:block left-0 md:left-auto top-16 md:top-auto w-full md:w-auto`}>
           {Object.keys(tabs).map((nav) => (
-            <li key={nav} className="m-4 p-4 transition-transform duration-300 font-bold text-md ease-in-out transform hover:bg-gray-600 hover:rounded-full hover:text-white hover:scale-105">
+            <li key={nav} className="m-2 p-2 transition-transform duration-300 font-bold text-sm ease-in-out transform hover:bg-gray-600 hover:rounded-full hover:text-white hover:scale-105">
               <a href={`#${nav}`} className="block">{tabs[nav]}</a>
             </li>
           ))}
         </ul>
 
         <button
-          className="relative flex items-center px-6 py-3 overflow-hidden font-medium transition-all bg-gray-500 rounded-md group"
+          className="relative flex items-center px-6 py-2 overflow-hidden font-medium transition-all bg-gray-800 rounded-xl group"
           onClick={() => setIsModalOpen(true)}
         >
-          <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-gray-500 rounded group-hover:-mr-4 group-hover:-mt-4">
-            <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+          <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-gray-600 rounded group-hover:-mr-4 group-hover:-mt-4">
+            <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-black"></span>
           </span>
-          <span className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-gray-500 rounded group-hover:-ml-4 group-hover:-mb-4">
-            <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+          <span className="absolute bottom-0 rotate-180 left-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-gray-600 rounded group-hover:-ml-4 group-hover:-mb-4">
+            <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-black"></span>
           </span>
-          <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-gray-500 rounded-md group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
+          <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-gray-600 rounded-md group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-white text-sm transition-colors duration-200 ease-in-out group-hover:text-white">
             Contact Me
           </span>
         </button>
