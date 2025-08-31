@@ -73,10 +73,8 @@ const LeadMagnetsAndForm = () => {
         purpose: formData.purpose,
         timeline: formData.timeline,
         comments: formData.comments,
-        to_email: 'your-email@domain.com' // Replace with your email
+        to_email: '4700gfx@gmail.com' // Replace with your email
       };
-
-      // Uncomment and configure when you set up EmailJS
       
       await window.emailjs.send(
         'service_ic893uk',    // Replace with your EmailJS service ID
@@ -124,7 +122,7 @@ const LeadMagnetsAndForm = () => {
       icon: "🌐",
       title: 'Free Website Audit',
       subtitle: 'Mobile & Desktop Analysis',
-      description: 'Get a comprehensive professional audit of your website\'s performance, user experience, and conversion potential with detailed recommendations.',
+      description: 'Get a comprehensive professional audit of your website\'s performance, user experience, and conversion potential with detailed recommendations. This will come through a video recording via Loom.',
       animation: "animate-fade-in-left"
     },
     {
@@ -132,7 +130,7 @@ const LeadMagnetsAndForm = () => {
       icon: "✅",
       title: 'Website Success Checklist',
       subtitle: 'Professional Grade Standards',
-      description: 'Our proven 47-point checklist used by agencies to ensure websites meet industry standards and convert visitors into customers.',
+      description: 'Our proven 47-point checklist used by agencies to ensure websites meet industry standards and convert visitors into customers. This checklist is useful to asses the state of your website when time for review',
       animation: "animate-fade-in-up"
     },
     {
@@ -140,7 +138,7 @@ const LeadMagnetsAndForm = () => {
       icon: "📖",
       title: '4-Week Website Transformation',
       subtitle: 'Complete Optimization Guide',
-      description: 'Transform your website into a conversion machine with our comprehensive 4-week action plan used by professional agencies.',
+      description: 'Transform your website into a conversion machine with our comprehensive 4-week action plan used by professional agencies. Useful for businesses with websites that want to take it to the next level.',
       animation: "animate-fade-in-right"
     }
   ];
@@ -159,10 +157,10 @@ const LeadMagnetsAndForm = () => {
         >
           Transform Your Website Into a Lead Generator
         </h1>
-        <p className={`text-black text-md md:text-md max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
+        <p className={`text-black text-md md:text-sm max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
           inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          Get instant access to our professional-grade resources and start converting more visitors into customers today. at 4700 GFX Studios, we provide the highest quality resources and solutions at a reasonable price point.
+          Get instant access to our professional-grade resources and start converting more visitors into customers today. At 4700 GFX Studios, we provide the highest quality resources and solutions at a reasonable price point for businesses in all phases. Check out our freebies:
         </p>
       </div>
 
@@ -208,8 +206,8 @@ const LeadMagnetsAndForm = () => {
           <h2 className="font-roboto font-bold text-2xl sm:text-3xl text-gray-800 mb-4">
             Why These Resources Work
           </h2>
-          <p className="text-gray-600 text-base sm:text-md">
-            Proven strategies used by 500+ agencies to transform websites into conversion machines with measurable results.
+          <p className="text-gray-600 text-base sm:text-md px-12">
+            Proven strategies used by 500+ agencies to transform websites into conversion machines with measurable results. These resources are great to provide insight for any business owner reviewing their website.
           </p>
         </div>
         
@@ -392,8 +390,8 @@ const LeadMagnetsAndForm = () => {
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
           Not Sure Which Resource Is Right for You?
         </h3>
-        <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-          Book a free 15-minute consultation and we'll recommend the best starting point for your specific situation
+        <p className="text-gray-600 text-md mb-8 max-w-2xl mx-auto">
+          Book a free 15-minute consultation and we'll recommend the best starting point for your specific situation. We will review your current needs to provide the right services to best serve your needs.
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           Schedule Free Consultation

@@ -7,8 +7,11 @@ import braveguidance1 from '../assets/images/braveguidance1.png';
 import braveguidance2 from '../assets/images/braveguidance2.png';
 import labelpic1 from '../assets/images/label1.png';
 import labelpic2 from '../assets/images/label2.png';
-import chefsous1 from '../assets/images/chefsous1.png';
-import chefsous2 from '../assets/images/chefsous2.png';
+import zubar1 from '../assets/images/zubar-hero.png'
+import zubar2 from '../assets/images/zubar-hero.png'
+import mohsite from '../assets/images/moh hero-about.png'
+import mohsite2 from '../assets/images/moh hero-about.png'
+
 
 const Project = () => {
   const [inView, setInView] = useState(false);
@@ -62,9 +65,9 @@ const Project = () => {
       id: 'zubar',
       name: 'Zu Bar Lounge',
       subtitle: 'Landing Page for New Lounge & Workspace',
-      images: [reelmate1, reelmate2],
+      images: [zubar1, zubar2],
       description: 'This project was a website requested by the client for a lounge that she is opening up. Due to her already running the business for a while, we did a redesign of her previous website in Wix while providing more functionality than she had before. We add new features such as a pop up window for a notifications and more.',
-      tags: ['⚛️ React', '🔥 Firebase', '📡 TMDB API', '🔐 Auth'],
+      tags: ['⚛️ React', '🧑🏿‍💻 Figma', '📋 FormSpree', '🛜 SEO Anayltics', '🫙 Domain Hosting', '📈 Email Marketing'],
       category: 'Restaurants & Lounges',
       links: [
         { label: 'View Live Site', url: 'https://zubarfl.com/', icon: '🌐' },
@@ -78,7 +81,7 @@ const Project = () => {
       subtitle: 'Record Label Website',
       images: [labelpic1, labelpic2],
       description: 'Multi-page website for an independent record label featuring artist showcases, blog integration, and scalable architecture. Designed for growth with modern aesthetics and seamless navigation. Created to scale with things such as e-Commerce, Blogs and Electronic Press Kits for interested parties',
-      tags: ['⚛️ React', '💻 Tailwind CSS', '📝 Blog Ready', '🎵 Music Industry'],
+      tags: ['⚛️ React', '💻 Tailwind CSS', '📝 Blog Ready', '🎵 Music Industry', '🧑🏿‍💻 Figma', '📋 FormSpree'],
       category: 'Music & Entertainment',
       links: [
         { label: 'View Live Site', url: 'https://budgetify-expense-tracker-project.vercel.app/', icon: '🌐' },
@@ -90,10 +93,10 @@ const Project = () => {
       id: 'manifests-of-hope',
       name: 'Manifest of Hope',
       subtitle: 'Full Custom Website with Shopify Intergration',
-      images: [chefsous1, chefsous2],
+      images: [mohsite, mohsite2],
       description: 'This website was commissioned as a redesign of a e-Commerce store that was previously on Wix. We provided a new design layout along with additional branding while intergrating her new store through Shopify instead of Wix.',
-      tags: ['🍦 Vanilla JS', '📡 Edamam API', '🎨 Custom CSS', '🔍 Advanced Search'],
-      category: 'e-Commerce',
+      tags: ['⚛️ React', '🏪 Shopify Intergration', '🎨 Custom CSS', '🔍 Advanced Search', '🧑🏿‍💻 Figma', '📋 FormSpree'],
+      category: 'E-Commerce',
       links: [
         { label: 'View Live Site', url: 'https://chef-sous-app.vercel.app/', icon: '🌐' },
         { label: 'GitHub Repository', url: 'https://github.com/4700gfx/Chef-Sous-App', icon: '💻' }
@@ -116,10 +119,10 @@ const Project = () => {
         >
           Our Featured Projects
         </h1>
-        <p className={`text-black text-md md:text-lg max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
+        <p className={`text-black text-md md:text-sm max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
           inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          Discover how we transform ideas into powerful digital experiences. Each project showcases our commitment to quality, innovation, and results-driven design.
+          Discover how we transform ideas into powerful digital experiences. Each project showcases our commitment to quality, innovation, and results-driven design. Through our experiences, we are able to translate our skils through different industries and niches. Check out our projects below:
         </p>
       </div>
 
@@ -143,8 +146,8 @@ const Project = () => {
           <h2 className="font-roboto font-bold text-2xl sm:text-3xl text-white mb-4">
             Project Success Metrics
           </h2>
-          <p className="text-gray-100 text-base sm:text-md">
-            Real results from real projects, delivering measurable impact for our clients.
+          <p className="text-gray-100 text-base sm:text-md px-10">
+            Real results from real projects, delivering measurable impact for our clients. These numbers continue to grow one project at a time. We pride ourselves on these metrics cause like people say...numbers talk.
           </p>
         </div>
         
@@ -154,7 +157,7 @@ const Project = () => {
             <p className="text-gray-300">Projects Completed</p>
           </div>
           <div className="p-4">
-            <div className="text-3xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent mb-2">100%</div>
+            <div className="text-3xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent mb-2">98%</div>
             <p className="text-gray-300">Client Satisfaction Rate</p>
           </div>
           <div className="p-4">
@@ -175,7 +178,7 @@ const Project = () => {
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
           Ready to Start Your Project?
         </h3>
-        <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+        <p className="text-gray-600 text-md mb-8 max-w-2xl mx-auto">
           Let's discuss how we can bring your vision to life with the same attention to detail and quality you see in our featured work.
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 mx-auto">

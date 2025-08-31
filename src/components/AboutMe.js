@@ -159,11 +159,11 @@ const AboutMe = () => {
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
           Ready to Transform Your Digital Presence?
         </h3>
-        <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-          Let's discuss how we can help your business grow with a modern, results-driven website
+        <p className="text-gray-600 text-md mb-8 max-w-2xl mx-auto">
+          Let's discuss how we can help your business grow with a modern, results-driven website. Our consultation will review your needs and how 4700 GFX Studio can fit your needs. Click the button below to get started:
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-          Get Your Free Consultation
+          📆 Get Your Free Consultation 📆
         </button>
       </div>
     </section>

@@ -24,7 +24,9 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Hero />
+      <section id='home'>
+        <Hero />
+      </section>
       <section id="techSection">
         <TechSection />
       </section>
@@ -37,7 +39,9 @@ function App() {
       <section id="techSection">
         <TechSection />
       </section>
-      <PricingComponent></PricingComponent>
+      <section id="pricing">
+        <PricingComponent></PricingComponent>
+      </section>
       <LeadMagnetsAndForms></LeadMagnetsAndForms>
       <Footer />
       <ScrollToTopButton /> {/* Add the ScrollToTopButton here */}

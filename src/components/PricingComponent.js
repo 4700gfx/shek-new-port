@@ -37,9 +37,9 @@ const PricingComponent = () => {
   const pricingTiers = [
     {
       name: "Starter",
-      price: "$150 - $175",
+      price: "$175 - $250",
       timeline: "1-2 Weeks",
-      description: "Perfect for freelancers and local businesses with minimal needs",
+      description: "Perfect for freelancers and local businesses with minimal needs. Landing page that advertises their business",
       features: [
         "Single Page (Home, About, Contact)",
         "Mobile Responsive Design",
@@ -56,9 +56,9 @@ const PricingComponent = () => {
     },
     {
       name: "Standard",
-      price: "$175 - $225",
+      price: "$275 - $350",
       timeline: "3-4 Weeks",
-      description: "Ideal for service-based businesses starting online",
+      description: "Ideal for service-based businesses starting online. Connects to users to different aspects of the business such as booking sites, social media and more.",
       features: [
         "Single Page Website or Landing Page",
         "Mobile Responsive Design",
@@ -74,9 +74,9 @@ const PricingComponent = () => {
     },
     {
       name: "Growth",
-      price: "$350 - $700",
+      price: "$425 - $700",
       timeline: "4-6 Weeks",
-      description: "For growing brands expanding services or product lines",
+      description: "For growing brands expanding services or product lines. Custom Intergrations including Shopify, Aquity and more.",
       features: [
         "5-7 Custom Designed Pages",
         "Advanced SEO & Analytics Setup",
@@ -94,8 +94,8 @@ const PricingComponent = () => {
     {
       name: "Premium",
       price: "$850+",
-      timeline: "6-8 Weeks",
-      description: "Full digital transformation for established businesses",
+      timeline: "8+ Weeks",
+      description: "Full digital transformation for established businesses. Includes additional services such as logo, marketing, social media promotion and more. This may include mobile applications as well. More details upon consultation",
       features: [
         "8-10 Custom Pages",
         "Fully Integrated E-Commerce",
@@ -215,7 +215,7 @@ const PricingComponent = () => {
         <h3 className="text-3xl font-bold text-white mb-4">
           Thinking Even Bigger? Want Something Custom?
         </h3>
-        <p className="text-gray-300 text-md mb-8 max-w-2xl mx-auto">
+        <p className="text-gray-300 text-sm mb-8 max-w-2xl mx-auto">
           Every business is unique. Let's discuss a tailored solution that perfectly fits your specific requirements and budget. Through our through consultation we can find the best combinations of soltuions to help your business grow.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
