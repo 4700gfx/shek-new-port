@@ -39,7 +39,7 @@ const PricingComponent = () => {
       name: "Starter",
       price: "$175 - $250",
       timeline: "1-2 Weeks",
-      description: "Perfect for freelancers and local businesses with minimal needs. Landing page that advertises their business",
+      description: "Ideal for freelancers and local businesses with simple needs. This plan includes a single landing page designed to showcase your business, attract visitors, and make a strong first impression online.",
       features: [
         "Single Page (Home, About, Contact)",
         "Mobile Responsive Design",
@@ -58,7 +58,7 @@ const PricingComponent = () => {
       name: "Standard",
       price: "$275 - $350",
       timeline: "3-4 Weeks",
-      description: "Ideal for service-based businesses starting online. Connects to users to different aspects of the business such as booking sites, social media and more.",
+      description: "Perfect for service-based businesses launching their online presence. This plan helps you connect with your audience by integrating booking systems, social media, and other key touchpoints.",
       features: [
         "Single Page Website or Landing Page",
         "Mobile Responsive Design",
@@ -76,7 +76,7 @@ const PricingComponent = () => {
       name: "Growth",
       price: "$425 - $700",
       timeline: "4-6 Weeks",
-      description: "For growing brands expanding services or product lines. Custom Intergrations including Shopify, Aquity and more.",
+      description: "Designed for growing brands expanding their services or product lines. Includes custom integrations such as Shopify, Acuity, and more to streamline operations and enhance your customers’ experience",
       features: [
         "5-7 Custom Designed Pages",
         "Advanced SEO & Analytics Setup",
@@ -92,10 +92,10 @@ const PricingComponent = () => {
       icon: "📈"
     },
     {
-      name: "Premium",
+      name: "Enterprise",
       price: "$850+",
       timeline: "8+ Weeks",
-      description: "Full digital transformation for established businesses. Includes additional services such as logo, marketing, social media promotion and more. This may include mobile applications as well. More details upon consultation",
+      description: "A complete digital transformation for established businesses. This plan includes branding, marketing, social media promotion, and more. It can also encompass mobile applications and other advanced solutions. Detailed offerings are tailored to your needs during a personalized consultation.",
       features: [
         "8-10 Custom Pages",
         "Fully Integrated E-Commerce",
@@ -128,7 +128,7 @@ const PricingComponent = () => {
         <p className={`text-gray-600 text-lg md:text-sm max-w-3xl mx-auto mb-8 transition-all duration-1000 delay-200 ${
           inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          At 4700 GFX Studio, we know that different business have different needs and budgets. Our different tiers provide more of an insight on the different services and solutions we can offer based on your needs and budget. If any of these plans does not need your budget. Feel free to contact us for a consultation.
+            At 4700 GFX Studios, we understand that every business has unique needs and budgets. Our tiered plans give you a clear view of the services and solutions available at different levels. If none of these plans fit your budget or requirements, feel free to reach out for a personalized consultation—we’re here to find the right solution for you.
         </p>
         <div className={`inline-flex items-center bg-gray-100 border border-gray-300 rounded-full px-6 py-3 transition-all duration-1000 delay-400 ${
           inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -216,7 +216,7 @@ const PricingComponent = () => {
           Thinking Even Bigger? Want Something Custom?
         </h3>
         <p className="text-gray-300 text-sm mb-8 max-w-2xl mx-auto">
-          Every business is unique. Let's discuss a tailored solution that perfectly fits your specific requirements and budget. Through our through consultation we can find the best combinations of soltuions to help your business grow.
+          Every business is unique. Let’s explore a tailored solution that fits your specific needs and budget. Through a thorough consultation, we’ll identify the best combination of services to help your business grow.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button className="bg-white hover:bg-gray-100 text-gray-900 font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">

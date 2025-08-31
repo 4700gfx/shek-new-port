@@ -45,7 +45,7 @@ const Hero = () => {
             Brand & Web Design Agency 💻
           </h2>
           <p className='font-hankenGrotesk font-normal mb-4 text-sm md:text-md'>
-            At 4700 GFX Studios, we design and develop modern, user-friendly websites and web applications that help businesses of all sizes—whether you’re just starting out or scaling to the next level. Our team blends clean, efficient code with sleek, responsive design to deliver digital solutions that don’t just look good—they work. From intuitive front-end experiences to reliable back-end systems, we make sure your online presence drives results without breaking your budget.
+            At 4700 GFX Studios, we design and develop modern, user-friendly websites and web applications that help businesses of all sizes—whether you’re just starting out or scaling to the next level. Our team blends clean, efficient code with sleek, responsive design and technologies to deliver digital solutions that don’t just look good—they work even better. From intuitive front-end experiences to reliable back-end systems, we make sure your online presence drives results without breaking your budget.
           </p>
           <h2 className='font-bold text-md'>Ready to bring your vision to life? Let’s get started today ⬇️.</h2>
             <button

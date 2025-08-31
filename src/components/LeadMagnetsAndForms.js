@@ -160,7 +160,7 @@ const LeadMagnetsAndForm = () => {
         <p className={`text-black text-md md:text-sm max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
           inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          Get instant access to our professional-grade resources and start converting more visitors into customers today. At 4700 GFX Studios, we provide the highest quality resources and solutions at a reasonable price point for businesses in all phases. Check out our freebies:
+          Get instant access to our expert resources and start turning more visitors into customers today. At 4700 GFX Studios, we provide high-quality tools and solutions at a price that works for businesses at every stage of growth. Explore our freebies and see how we can help your business thrive.
         </p>
       </div>
 
@@ -207,7 +207,7 @@ const LeadMagnetsAndForm = () => {
             Why These Resources Work
           </h2>
           <p className="text-gray-600 text-base sm:text-md px-12">
-            Proven strategies used by 500+ agencies to transform websites into conversion machines with measurable results. These resources are great to provide insight for any business owner reviewing their website.
+            Our resources draw on strategies used by 500+ agencies to turn websites into conversion-driven machines with measurable results. Perfect for any business owner looking to evaluate and improve their online presence.
           </p>
         </div>
         
@@ -248,7 +248,7 @@ const LeadMagnetsAndForm = () => {
             Start Your Project Today
           </h2>
           <p className="text-gray-100 text-base sm:text-md max-w-2xl mx-auto">
-            Ready to take your website to the next level? Tell us about your project and get a customized strategy and quote within 24 hours.
+            Share your project with us and receive a customized strategy and quote within 24 hours. Let’s bring your vision to life and start driving real results.
           </p>
         </div>
 
@@ -298,12 +298,12 @@ const LeadMagnetsAndForm = () => {
                 className="w-full p-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:border-red-400 focus:outline-none transition-all duration-300"
               >
                 <option value="" className="bg-gray-700">Select your budget range</option>
-                <option value="under-5k" className="bg-gray-700">Under $5,000</option>
-                <option value="5k-10k" className="bg-gray-700">$5,000 - $10,000</option>
-                <option value="10k-25k" className="bg-gray-700">$10,000 - $25,000</option>
-                <option value="25k-50k" className="bg-gray-700">$25,000 - $50,000</option>
-                <option value="over-50k" className="bg-gray-700">$50,000+</option>
-                <option value="not-sure" className="bg-gray-700">Not sure yet</option>
+                <option value="under-5k" className="bg-gray-700">Under $250</option>
+                <option value="5k-10k" className="bg-gray-700">$300 - $500</option>
+                <option value="10k-25k" className="bg-gray-700">$550 - $700</option>
+                <option value="25k-50k" className="bg-gray-700">$750 - $1,000</option>
+                <option value="over-50k" className="bg-gray-700">Over $1,500 +</option>
+                <option value="not-sure" className="bg-gray-700">Not Sure Yet</option>
               </select>
             </div>
 
@@ -318,13 +318,13 @@ const LeadMagnetsAndForm = () => {
                 onChange={handleInputChange}
                 className="w-full p-3 border border-gray-600 bg-gray-700 text-white rounded-lg focus:border-red-400 focus:outline-none transition-all duration-300"
               >
-                <option value="" className="bg-gray-700">Select timeline</option>
+                <option value="" className="bg-gray-700">Select Timeline</option>
                 <option value="asap" className="bg-gray-700">ASAP (Rush Project)</option>
-                <option value="1-month" className="bg-gray-700">Within 1 month</option>
-                <option value="2-3-months" className="bg-gray-700">2-3 months</option>
-                <option value="3-6-months" className="bg-gray-700">3-6 months</option>
-                <option value="6-plus-months" className="bg-gray-700">6+ months</option>
-                <option value="flexible" className="bg-gray-700">Flexible timeline</option>
+                <option value="1-month" className="bg-gray-700">Within 3-4 Weeks</option>
+                <option value="2-3-months" className="bg-gray-700">2-3 Months</option>
+                <option value="3-6-months" className="bg-gray-700">3-6 Months</option>
+                <option value="6-plus-months" className="bg-gray-700">6+ Months</option>
+                <option value="flexible" className="bg-gray-700">Flexible Timeline</option>
               </select>
             </div>
           </div>
@@ -391,7 +391,7 @@ const LeadMagnetsAndForm = () => {
           Not Sure Which Resource Is Right for You?
         </h3>
         <p className="text-gray-600 text-md mb-8 max-w-2xl mx-auto">
-          Book a free 15-minute consultation and we'll recommend the best starting point for your specific situation. We will review your current needs to provide the right services to best serve your needs.
+          Schedule a quick consultation, and we’ll recommend the best starting point for your unique situation. We’ll review your current needs and guide you toward the services that will have the most impact for your business.
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           Schedule Free Consultation

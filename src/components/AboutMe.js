@@ -37,19 +37,19 @@ const AboutMe = () => {
     {
       icon: "🌐",
       title: "Modern Web Design That Builds Brands & Drives Growth",
-      description: "At 4700 GFX Studios, we create sleek, modern websites designed to boost traffic and strengthen your brand identity. Using today's best tools and design practices, we craft intuitive user interfaces that engage visitors and deliver an unforgettable experience for your audience. Whether you're a small business or a growing company, we're here to bring your vision online with impact.",
+      description: "At 4700 GFX Studios, we design websites that do more than just look good—they work hard for your business. Our team combines modern design with smart strategy to create sites that attract visitors, build trust, and showcase your brand in the best light. Whether you’re launching your first business or scaling to new heights, we’re here to bring your vision online with clarity, creativity, and impact.",
       animation: "animate-fade-in-left"
     },
     {
       icon: "💡",
       title: "Flexible Web Solutions for Every Stage of Your Business",
-      description: "We believe great design should be accessible at every step of your entrepreneurial journey. Whether you need your very first landing page or a fully scalable website, our team builds solutions that grow with you. With flexible pricing to fit any budget, we make it easy to create a professional online presence that evolves as your business does.",
+      description: "We believe great design should be within reach at every stage of your entrepreneurial journey. From your very first landing page to a fully scalable website, our team builds solutions that grow alongside your business. With flexible pricing options designed to fit any budget, we make it simple to establish a professional online presence that adapts and evolves as you do.",
       animation: "animate-fade-in-up"
     },
     {
       icon: "📈",
       title: "Grow Your Brand. Reach More Customers.",
-      description: "At 4700 GFX Studios, we focus on building a strong digital footprint that makes your brand more accessible to a wider audience. With smart SEO strategies and monthly analytics, we ensure your website runs at peak performance while climbing higher in Google search results. The result? A faster, more visible, and more effective online presence that drives real growth for your business.",
+      description: "At 4700 GFX Studios, we help you build a powerful digital footprint that makes your brand easier to find and connect with online. Through smart SEO strategies and detailed monthly analytics, we keep your website running at peak performance while improving your visibility in Google search results. The outcome? A faster, stronger, and more effective online presence that drives meaningful growth for your business.",
       animation: "animate-fade-in-right"
     }
   ];
@@ -70,6 +70,8 @@ const AboutMe = () => {
     { name: "Mobile Applications", icon: "📲" },
     { name: "Landing Pages", icon: "🛬" },
     { name: "Data Management", icon: "🔢" },
+    { name: "Account Mangement", icon: "☎️" },
+    { name: "Data Entry", icon: "🔢" }
   ];
 
   return (
@@ -88,7 +90,7 @@ const AboutMe = () => {
         <p className={`text-black text-md md:text-md max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
           inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          Comprehensive web solutions designed to elevate your business and drive measurable results. at 4700 GFX Studios, we working to ensure that we are provided the highest quality of services and solutions at a reasonable price point.
+          Comprehensive web solutions designed to elevate your business and deliver measurable results. At 4700 GFX Studios, we’re committed to providing the highest quality services and solutions—tailored to your goals—at a price that makes sense for your business.
         </p>
       </div>
 
@@ -132,7 +134,7 @@ const AboutMe = () => {
             Our Technical Expertise
           </h2>
           <p className="text-gray-600 text-base sm:text-md px-10">
-            We leverage cutting-edge technologies and proven methodologies to deliver exceptional results. Through our wide skill set, we offer brands different solutions for business at different levels of growth. From Web Design, Software Development and Branding + Marketing we offer everything you need at 4700 GFX Studios.
+            We combine cutting-edge technologies with proven strategies to deliver results that matter. With a versatile skill set, we provide solutions tailored to businesses at every stage of growth. From web design and software development to branding and marketing, 4700 GFX Studios offers everything you need to build, grow, and elevate your brand.
           </p>
         </div>
         
@@ -157,10 +159,10 @@ const AboutMe = () => {
         inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`} style={{ animationDelay: '1200ms' }}>
         <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
-          Ready to Transform Your Digital Presence?
+          Let’s Build Something Great Together
         </h3>
         <p className="text-gray-600 text-md mb-8 max-w-2xl mx-auto">
-          Let's discuss how we can help your business grow with a modern, results-driven website. Our consultation will review your needs and how 4700 GFX Studio can fit your needs. Click the button below to get started:
+          Don’t wait to elevate your online presence. Book your consultation today and discover how a results-driven website from 4700 GFX Studios can increase traffic, build trust, and drive measurable growth. Click below to get started—your future customers are already searching.
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           📆 Get Your Free Consultation 📆

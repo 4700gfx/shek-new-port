@@ -52,11 +52,11 @@ const Project = () => {
       name: 'Brave Guidance',
       subtitle: 'Therapy Practice Landing Page',
       images: [braveguidance1, braveguidance2], 
-      description: 'This project was for a Licensed Mental Health Therapist that needed a landing page for people that are interested in beginning with her practice. This was a fairly quick and smooth project using Figma for the design, React for the development and third party services such as FormSpree for any interested leads.',
+      description: 'We created a clean, welcoming landing page for a licensed mental health therapist looking to connect with new clients. Designed in Figma and developed in React, the site provides an easy way for visitors to learn about her practice and take the first step toward booking services. We also integrated FormSpree to seamlessly capture leads and ensure a smooth client intake process.',
       tags: ['⚛️ React', '💻 Tailwind CSS', '🎨 Figma Design', '📱 Responsive', 'Contact Form 📋'],
       category: 'Healthcare & Mental Health',
       links: [
-        { label: 'View Live Site', url: 'https://https://www.braveguidance.com/', icon: '🌐' },
+        { label: 'View Live Site', url: 'https://www.braveguidance.com/', icon: '🌐' },
         { label: 'GitHub Repository', url: 'https://github.com/4700gfx/brave-guidance-page', icon: '💻' }
       ],
       animation: 'animate-fade-in-left'
@@ -66,7 +66,7 @@ const Project = () => {
       name: 'Zu Bar Lounge',
       subtitle: 'Landing Page for New Lounge & Workspace',
       images: [zubar1, zubar2],
-      description: 'This project was a website requested by the client for a lounge that she is opening up. Due to her already running the business for a while, we did a redesign of her previous website in Wix while providing more functionality than she had before. We add new features such as a pop up window for a notifications and more.',
+      description: 'For this project, we partnered with a client opening a new lounge who wanted to refresh and upgrade her existing online presence. Since she had already been running the business, we redesigned her previous Wix website with a modern look and improved functionality. New features included a notification pop-up window and additional tools to enhance user experience and engagement.',
       tags: ['⚛️ React', '🧑🏿‍💻 Figma', '📋 FormSpree', '🛜 SEO Anayltics', '🫙 Domain Hosting', '📈 Email Marketing'],
       category: 'Restaurants & Lounges',
       links: [
@@ -80,12 +80,12 @@ const Project = () => {
       name: '4700 Enterprises',
       subtitle: 'Record Label Website',
       images: [labelpic1, labelpic2],
-      description: 'Multi-page website for an independent record label featuring artist showcases, blog integration, and scalable architecture. Designed for growth with modern aesthetics and seamless navigation. Created to scale with things such as e-Commerce, Blogs and Electronic Press Kits for interested parties',
+      description: 'We developed a multi-page website for an independent record label, designed to highlight their artists while laying the foundation for future growth. The site features artist showcases, blog integration, and a scalable architecture built for expansion. With a modern aesthetic and seamless navigation, the platform is ready to scale into e-commerce, blogs, and electronic press kits (EPKs) for industry professionals and fans alike.',
       tags: ['⚛️ React', '💻 Tailwind CSS', '📝 Blog Ready', '🎵 Music Industry', '🧑🏿‍💻 Figma', '📋 FormSpree'],
       category: 'Music & Entertainment',
       links: [
-        { label: 'View Live Site', url: 'https://budgetify-expense-tracker-project.vercel.app/', icon: '🌐' },
-        { label: 'GitHub Repository', url: 'https://github.com/4700gfx/Budgetify-Expense-Tracker-Project', icon: '💻' }
+        { label: 'View Live Site', url: 'https://www.4700enterprises.com/', icon: '🌐' },
+        { label: 'GitHub Repository', url: 'https://github.com/4700gfx/label-website-', icon: '💻' }
       ],
       animation: 'animate-fade-in-right'
     },
@@ -94,11 +94,11 @@ const Project = () => {
       name: 'Manifest of Hope',
       subtitle: 'Full Custom Website with Shopify Intergration',
       images: [mohsite, mohsite2],
-      description: 'This website was commissioned as a redesign of a e-Commerce store that was previously on Wix. We provided a new design layout along with additional branding while intergrating her new store through Shopify instead of Wix.',
+      description: 'This project involved redesigning an existing e-commerce store originally built on Wix. We delivered a fresh, modern layout and updated branding while migrating the store to Shopify for enhanced functionality, scalability, and a better shopping experience for customers.',
       tags: ['⚛️ React', '🏪 Shopify Intergration', '🎨 Custom CSS', '🔍 Advanced Search', '🧑🏿‍💻 Figma', '📋 FormSpree'],
       category: 'E-Commerce',
       links: [
-        { label: 'View Live Site', url: 'https://chef-sous-app.vercel.app/', icon: '🌐' },
+        { label: 'View Live Site', url: 'https://www.moh.life/', icon: '🌐' },
         { label: 'GitHub Repository', url: 'https://github.com/4700gfx/Chef-Sous-App', icon: '💻' }
       ],
       animation: 'animate-fade-in-left'
@@ -117,9 +117,9 @@ const Project = () => {
             inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          Our Featured Projects
+          Our Work
         </h1>
-        <p className={`text-black text-md md:text-sm max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
+        <p className={`text-black text-md md:text-base max-w-3xl mx-auto transition-all duration-1000 delay-200 ${
           inView ? 'animate-fade-in-up opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           Discover how we transform ideas into powerful digital experiences. Each project showcases our commitment to quality, innovation, and results-driven design. Through our experiences, we are able to translate our skils through different industries and niches. Check out our projects below:
@@ -147,7 +147,7 @@ const Project = () => {
             Project Success Metrics
           </h2>
           <p className="text-gray-100 text-base sm:text-md px-10">
-            Real results from real projects, delivering measurable impact for our clients. These numbers continue to grow one project at a time. We pride ourselves on these metrics cause like people say...numbers talk.
+            We deliver tangible results with every project, helping our clients achieve measurable growth. These numbers continue to grow—one project at a time. We take pride in these metrics because, as the saying goes, numbers don’t lie.
           </p>
         </div>
         
@@ -179,7 +179,7 @@ const Project = () => {
           Ready to Start Your Project?
         </h3>
         <p className="text-gray-600 text-md mb-8 max-w-2xl mx-auto">
-          Let's discuss how we can bring your vision to life with the same attention to detail and quality you see in our featured work.
+          We’d love to help you create a website with the same attention to detail, quality, and care that you see in our featured projects.
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 mx-auto">
           <span>🚀</span>
