@@ -12,7 +12,7 @@ const EbookLanding = () => {
   const observerRef = useRef(null);
 
   // Google Sheets Integration Configuration
-  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6SHwV8Yd_9qUrB0OueuFmeWQtAg-o1DVxzu0UiKg8G4ip02k_F9rGvg1pqEUBwA1o2A/exec';
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfzdBiXPdlcrYXqejJdEIIn5QWlA4yYWNhCa5CR2l7j_LaF9KI4Cm7ykR2kKUBwYML3w/exec';
 
   useEffect(() => {
     // Create intersection observer
@@ -55,7 +55,7 @@ const EbookLanding = () => {
     });
   };
 
-  // Function to submit data to Google Sheets
+  // JSONP function to submit data to Google Sheets (bypasses CORS)
   const submitToGoogleSheets = async (data) => {
     try {
       // Check if URL is configured
@@ -63,48 +63,68 @@ const EbookLanding = () => {
         throw new Error('Please configure your Google Apps Script URL');
       }
 
-      console.log('Submitting data to Google Sheets:', data);
+      console.log('Submitting data to Google Sheets via JSONP:', data);
 
-      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      // Use JSONP instead of fetch to bypass CORS
+      return new Promise((resolve, reject) => {
+        // Create a unique callback name
+        const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+        
+        // Create the script element
+        const script = document.createElement('script');
+        
+        // Build the URL with parameters
+        const params = new URLSearchParams({
           name: data.name,
           email: data.email,
           leadType: data.leadType,
-          timestamp: new Date().toISOString(),
-          source: 'Landing Page'
-        })
+          callback: callbackName
+        });
+        
+        script.src = `${GOOGLE_APPS_SCRIPT_URL}?${params.toString()}`;
+        
+        // Set up the callback
+        window[callbackName] = (response) => {
+          console.log('JSONP response:', response);
+          
+          // Clean up
+          document.head.removeChild(script);
+          delete window[callbackName];
+          
+          if (response.success) {
+            resolve(response);
+          } else {
+            reject(new Error(response.error || 'Unknown error occurred'));
+          }
+        };
+        
+        // Handle script load errors
+        script.onerror = () => {
+          document.head.removeChild(script);
+          delete window[callbackName];
+          reject(new Error('Failed to load script'));
+        };
+        
+        // Add script to document
+        document.head.appendChild(script);
+        
+        // Set timeout to prevent hanging
+        setTimeout(() => {
+          if (window[callbackName]) {
+            document.head.removeChild(script);
+            delete window[callbackName];
+            reject(new Error('Request timeout'));
+          }
+        }, 10000); // 10 second timeout
       });
-
-      console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Response error:', errorText);
-        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
-      }
-
-      const result = await response.json();
-      console.log('Response result:', result);
       
-      if (!result.success) {
-        throw new Error(result.error || 'Unknown error occurred');
-      }
-      
-      return result;
     } catch (error) {
       console.error('Error submitting to Google Sheets:', error);
       
       // More specific error messages
-      if (error.message.includes('fetch')) {
-        throw new Error('Network error. Please check your internet connection and try again.');
-      } else if (error.message.includes('CORS')) {
-        throw new Error('Configuration error. Please contact support.');
-      } else if (error.message.includes('Failed to fetch')) {
+      if (error.message.includes('timeout')) {
+        throw new Error('Request timed out. Please check your internet connection and try again.');
+      } else if (error.message.includes('script')) {
         throw new Error('Unable to reach the server. Please try again in a moment.');
       } else {
         throw error;
@@ -167,24 +187,50 @@ const EbookLanding = () => {
     setSelectedLeadMagnet(magnetType);
   };
 
-  // For testing - you can temporarily use this to test the connection
+  // Updated test function using JSONP
   const testGoogleAppsScriptConnection = async () => {
     try {
       console.log('Testing connection to:', GOOGLE_APPS_SCRIPT_URL);
       
-      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
-        method: 'GET'
+      return new Promise((resolve, reject) => {
+        const callbackName = 'test_callback_' + Math.round(100000 * Math.random());
+        const script = document.createElement('script');
+        
+        script.src = `${GOOGLE_APPS_SCRIPT_URL}?callback=${callbackName}`;
+        
+        window[callbackName] = (response) => {
+          console.log('Test response:', response);
+          document.head.removeChild(script);
+          delete window[callbackName];
+          
+          if (response.status === 'API is working') {
+            alert('✅ Connection successful! Your Google Apps Script is working.');
+            resolve(response);
+          } else {
+            alert('❌ Unexpected response from server.');
+            reject(new Error('Unexpected response'));
+          }
+        };
+        
+        script.onerror = () => {
+          document.head.removeChild(script);
+          delete window[callbackName];
+          alert('❌ Connection test failed: Could not reach server.');
+          reject(new Error('Script load failed'));
+        };
+        
+        document.head.appendChild(script);
+        
+        setTimeout(() => {
+          if (window[callbackName]) {
+            document.head.removeChild(script);
+            delete window[callbackName];
+            alert('❌ Connection test failed: Timeout.');
+            reject(new Error('Timeout'));
+          }
+        }, 10000);
       });
       
-      console.log('Test response status:', response.status);
-      const text = await response.text();
-      console.log('Test response text:', text);
-      
-      if (response.ok) {
-        alert('✅ Connection successful! Your Google Apps Script is working.');
-      } else {
-        alert('❌ Connection failed. Check your URL and deployment.');
-      }
     } catch (error) {
       console.error('Connection test failed:', error);
       alert('❌ Connection test failed: ' + error.message);
@@ -338,14 +384,6 @@ const EbookLanding = () => {
                     </div>
                   )}
                   
-                  {GOOGLE_APPS_SCRIPT_URL !== 'YOUR_DEPLOYED_WEB_APP_URL_HERE' && (
-                    <button
-                      onClick={testGoogleAppsScriptConnection}
-                      className="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-xl text-sm hover:bg-blue-600 transition-all duration-300"
-                    >
-                      🔍 Test Connection First
-                    </button>
-                  )}
                   
                   <button
                     onClick={handleMainEbookSubmit}
