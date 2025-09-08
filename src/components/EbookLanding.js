@@ -5,10 +5,14 @@ const EbookLanding = () => {
   const [leadMagnetEmail, setLeadMagnetEmail] = useState({ name: '', email: '' });
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [selectedLeadMagnet, setSelectedLeadMagnet] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Create refs for each section
   const sectionRefs = useRef({});
   const observerRef = useRef(null);
+
+  // Google Sheets Integration Configuration
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6SHwV8Yd_9qUrB0OueuFmeWQtAg-o1DVxzu0UiKg8G4ip02k_F9rGvg1pqEUBwA1o2A/exec';
 
   useEffect(() => {
     // Create intersection observer
@@ -51,31 +55,140 @@ const EbookLanding = () => {
     });
   };
 
-  const handleMainEbookSubmit = () => {
-    if (!leadMagnetEmail.name || !leadMagnetEmail.email) {
-      alert('Please provide your name and email');
-      return;
+  // Function to submit data to Google Sheets
+  const submitToGoogleSheets = async (data) => {
+    try {
+      // Check if URL is configured
+      if (GOOGLE_APPS_SCRIPT_URL === 'YOUR_DEPLOYED_WEB_APP_URL_HERE') {
+        throw new Error('Please configure your Google Apps Script URL');
+      }
+
+      console.log('Submitting data to Google Sheets:', data);
+
+      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          leadType: data.leadType,
+          timestamp: new Date().toISOString(),
+          source: 'Landing Page'
+        })
+      });
+
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Response error:', errorText);
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+      }
+
+      const result = await response.json();
+      console.log('Response result:', result);
+      
+      if (!result.success) {
+        throw new Error(result.error || 'Unknown error occurred');
+      }
+      
+      return result;
+    } catch (error) {
+      console.error('Error submitting to Google Sheets:', error);
+      
+      // More specific error messages
+      if (error.message.includes('fetch')) {
+        throw new Error('Network error. Please check your internet connection and try again.');
+      } else if (error.message.includes('CORS')) {
+        throw new Error('Configuration error. Please contact support.');
+      } else if (error.message.includes('Failed to fetch')) {
+        throw new Error('Unable to reach the server. Please try again in a moment.');
+      } else {
+        throw error;
+      }
     }
-    
-    console.log('4-Week transformation guide requested:', leadMagnetEmail);
-    setShowSuccessModal(true);
-    setLeadMagnetEmail({ name: '', email: '' });
   };
 
-  const handleOtherLeadMagnetSubmit = () => {
+  const handleMainEbookSubmit = async () => {
     if (!leadMagnetEmail.name || !leadMagnetEmail.email) {
       alert('Please provide your name and email');
       return;
     }
+
+    setIsSubmitting(true);
     
-    console.log('Lead magnet requested:', { type: selectedLeadMagnet, ...leadMagnetEmail });
-    alert('Download started! Check your email.');
-    setSelectedLeadMagnet(null);
-    setLeadMagnetEmail({ name: '', email: '' });
+    try {
+      await submitToGoogleSheets({
+        name: leadMagnetEmail.name,
+        email: leadMagnetEmail.email,
+        leadType: '4-Week Transformation Guide'
+      });
+
+      console.log('4-Week transformation guide requested:', leadMagnetEmail);
+      setShowSuccessModal(true);
+      setLeadMagnetEmail({ name: '', email: '' });
+    } catch (error) {
+      alert('Sorry, there was an error processing your request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleOtherLeadMagnetSubmit = async () => {
+    if (!leadMagnetEmail.name || !leadMagnetEmail.email) {
+      alert('Please provide your name and email');
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      await submitToGoogleSheets({
+        name: leadMagnetEmail.name,
+        email: leadMagnetEmail.email,
+        leadType: selectedLeadMagnet === 'audit' ? 'Free Website Audit' : 'Website Success Checklist'
+      });
+
+      console.log('Lead magnet requested:', { type: selectedLeadMagnet, ...leadMagnetEmail });
+      alert('Download started! Check your email.');
+      setSelectedLeadMagnet(null);
+      setLeadMagnetEmail({ name: '', email: '' });
+    } catch (error) {
+      alert('Sorry, there was an error processing your request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleLeadMagnetClick = (magnetType) => {
     setSelectedLeadMagnet(magnetType);
+  };
+
+  // For testing - you can temporarily use this to test the connection
+  const testGoogleAppsScriptConnection = async () => {
+    try {
+      console.log('Testing connection to:', GOOGLE_APPS_SCRIPT_URL);
+      
+      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'GET'
+      });
+      
+      console.log('Test response status:', response.status);
+      const text = await response.text();
+      console.log('Test response text:', text);
+      
+      if (response.ok) {
+        alert('✅ Connection successful! Your Google Apps Script is working.');
+      } else {
+        alert('❌ Connection failed. Check your URL and deployment.');
+      }
+    } catch (error) {
+      console.error('Connection test failed:', error);
+      alert('❌ Connection test failed: ' + error.message);
+    }
   };
 
   const otherLeadMagnets = [
@@ -91,14 +204,14 @@ const EbookLanding = () => {
       icon: "✅",
       title: 'Website Success Checklist',
       subtitle: 'Professional Grade Standards',
-      description: 'OOur proven 47-point checklist used by agencies to ensure websites meet industry standards and convert visitors into customers. This checklist is useful to asses the state of your website when time for review.',
+      description: 'Our proven 47-point checklist used by agencies to ensure websites meet industry standards and convert visitors into customers. This checklist is useful to asses the state of your website when time for review.',
     }
   ];
 
   const weeklyBreakdown = [
     {
       week: "Week 1",
-      title: "Foundation & Analysis",
+      title: "Foundation & Quick Wins",
       icon: "🔍",
       focus: "Audit & Strategy",
       tasks: [
@@ -110,9 +223,9 @@ const EbookLanding = () => {
     },
     {
       week: "Week 2", 
-      title: "Design & User Experience",
+      title: "Conversion Psychology",
       icon: "🎨",
-      focus: "Visual & UX Improvements",
+      focus: "Leverage Psychology to Drive Action",
       tasks: [
         "Optimize page layouts for conversions",
         "Improve mobile responsiveness",
@@ -122,9 +235,9 @@ const EbookLanding = () => {
     },
     {
       week: "Week 3",
-      title: "Content & Conversion",
+      title: "Advanced Optimization & Testing",
       icon: "💰",
-      focus: "Copy & Call-to-Actions",
+      focus: "Data-Driven Conversion Improvements",
       tasks: [
         "Rewrite key landing page copy",
         "Optimize call-to-action buttons",
@@ -134,9 +247,9 @@ const EbookLanding = () => {
     },
     {
       week: "Week 4",
-      title: "Testing & Optimization",
+      title: "Automation & Long Term Growth Systems",
       icon: "📊",
-      focus: "Performance & Analytics",
+      focus: "Scale Your Success With Smart Systems",
       tasks: [
         "Implement tracking and analytics",
         "A/B test critical elements",
@@ -200,7 +313,8 @@ const EbookLanding = () => {
                     value={leadMagnetEmail.name}
                     onChange={handleLeadMagnetEmailChange}
                     placeholder="Your Full Name"
-                    className="w-full p-4 border-2 border-gray-200 bg-white/90 text-gray-800 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 placeholder-gray-500"
+                    disabled={isSubmitting}
+                    className="w-full p-4 border-2 border-gray-200 bg-white/90 text-gray-800 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 placeholder-gray-500 disabled:opacity-50"
                   />
                   <input
                     type="email"
@@ -208,15 +322,48 @@ const EbookLanding = () => {
                     value={leadMagnetEmail.email}
                     onChange={handleLeadMagnetEmailChange}
                     placeholder="your@email.com"
-                    className="w-full p-4 border-2 border-gray-200 bg-white/90 text-gray-800 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 placeholder-gray-500"
+                    disabled={isSubmitting}
+                    className="w-full p-4 border-2 border-gray-200 bg-white/90 text-gray-800 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 placeholder-gray-500 disabled:opacity-50"
                   />
+                  
+                  {/* Temporary test button - remove after testing */}
+                  {GOOGLE_APPS_SCRIPT_URL === 'YOUR_DEPLOYED_WEB_APP_URL_HERE' && (
+                    <div className="bg-yellow-100 border border-yellow-400 rounded-xl p-4">
+                      <p className="text-yellow-800 text-sm font-medium mb-2">
+                        ⚠️ Please configure your Google Apps Script URL first
+                      </p>
+                      <p className="text-yellow-700 text-xs">
+                        Replace 'YOUR_DEPLOYED_WEB_APP_URL_HERE' with your actual deployed web app URL
+                      </p>
+                    </div>
+                  )}
+                  
+                  {GOOGLE_APPS_SCRIPT_URL !== 'YOUR_DEPLOYED_WEB_APP_URL_HERE' && (
+                    <button
+                      onClick={testGoogleAppsScriptConnection}
+                      className="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-xl text-sm hover:bg-blue-600 transition-all duration-300"
+                    >
+                      🔍 Test Connection First
+                    </button>
+                  )}
+                  
                   <button
                     onClick={handleMainEbookSubmit}
-                    className="relative w-full bg-gradient-to-r from-gray-700 to-black text-white font-bold py-4 px-8 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] flex items-center justify-center gap-2 overflow-hidden"
+                    disabled={isSubmitting || GOOGLE_APPS_SCRIPT_URL === 'YOUR_DEPLOYED_WEB_APP_URL_HERE'}
+                    className="relative w-full bg-gradient-to-r from-gray-700 to-black text-white font-bold py-4 px-8 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] flex items-center justify-center gap-2 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-800 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative">🚀</span>
-                    <span className="relative">Start My Transformation Now!</span>
+                    {isSubmitting ? (
+                      <>
+                        <div className="relative animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                        <span className="relative">Processing...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="relative">🚀</span>
+                        <span className="relative">Start My Transformation Now!</span>
+                      </>
+                    )}
                   </button>
                 </div>
                 <p className="text-gray-600 mt-4 text-sm text-center">
@@ -526,9 +673,9 @@ const EbookLanding = () => {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl animate-bounce">🚀</span>
               </div>
-              <h3 className="font-roboto text-2xl font-bold text-gray-800 mb-4">Download Starting!</h3>
+              <h3 className="font-roboto text-2xl font-bold text-gray-800 mb-4">Success!</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Your 4-Week Website Transformation Guide is on its way to your inbox. Get ready to see amazing results!
+                Your information has been submitted successfully! You'll receive your 4-Week Website Transformation Guide via email shortly.
               </p>
               <button
                 onClick={() => setShowSuccessModal(false)}
@@ -562,7 +709,8 @@ const EbookLanding = () => {
                   value={leadMagnetEmail.name}
                   onChange={handleLeadMagnetEmailChange}
                   placeholder="Your Name"
-                  className="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 disabled:opacity-50"
                 />
                 <input
                   type="email"
@@ -570,22 +718,32 @@ const EbookLanding = () => {
                   value={leadMagnetEmail.email}
                   onChange={handleLeadMagnetEmailChange}
                   placeholder="your@email.com"
-                  className="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 disabled:opacity-50"
                 />
               </div>
 
               <div className="flex gap-3">
                 <button
                   onClick={() => setSelectedLeadMagnet(null)}
-                  className="flex-1 bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-300 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="flex-1 bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-300 transition-all duration-300 disabled:opacity-50"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleOtherLeadMagnetSubmit}
-                  className="flex-1 bg-gradient-to-r from-gray-700 to-black text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  disabled={isSubmitting}
+                  className="flex-1 bg-gradient-to-r from-gray-700 to-black text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 flex items-center justify-center gap-2"
                 >
-                  Send It Now!
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    'Send It Now!'
+                  )}
                 </button>
               </div>
             </div>
