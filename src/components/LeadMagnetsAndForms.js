@@ -373,7 +373,7 @@ const LeadMagnetsAndForm = () => {
               className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 mx-auto"
             >
               <span>📧</span>
-              Get Your Free Consultation
+              Send Your Request
             </button>
             
             <p className="text-gray-300 mt-4 text-sm">
@@ -394,7 +394,9 @@ const LeadMagnetsAndForm = () => {
           Schedule a quick consultation, and we’ll recommend the best starting point for your unique situation. We’ll review your current needs and guide you toward the services that will have the most impact for your business.
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-          Schedule Free Consultation
+          <a href='https://calendly.com/4700gfx/website-review-and-consultation' target='_blank'>
+            Schedule Free Consultation
+          </a>
         </button>
       </div>
 

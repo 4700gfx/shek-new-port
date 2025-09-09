@@ -194,15 +194,11 @@ const PricingComponent = () => {
 
               {/* CTA Button */}
               <button className={`w-full bg-gradient-to-r ${tier.gradient} hover:${tier.hoverGradient} text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}>
-                Get Started
+              <a href='https://calendly.com/4700gfx/website-review-and-consultation' target='_blank'>
+                Get Started 
+              </a>
               </button>
 
-              {/* Additional Info */}
-              <div className="mt-4 text-center">
-                <button className="text-gray-500 hover:text-gray-700 text-sm font-medium transition-colors duration-300">
-                  View Full Details →
-                </button>
-              </div>
             </div>
           </div>
         ))}
@@ -220,7 +216,9 @@ const PricingComponent = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button className="bg-white hover:bg-gray-100 text-gray-900 font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            Schedule Free Consultation
+            <a href='https://calendly.com/4700gfx/website-review-and-consultation' target='_blank'>
+              Schedule Free Consultation
+            </a>
           </button>
           <button className="border-2 border-gray-400 hover:border-gray-300 text-gray-300 hover:text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:-translate-y-1">
             View Portfolio

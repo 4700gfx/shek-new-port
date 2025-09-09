@@ -38,7 +38,9 @@ const HomePage = () => (
     <section id="pricing">
       <PricingComponent />
     </section>
-    <LeadMagnetsAndForms />
+    <section id='leadSection'>
+      <LeadMagnetsAndForms />
+    </section>
   </div>
 );
 

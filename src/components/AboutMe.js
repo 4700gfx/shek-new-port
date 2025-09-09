@@ -117,7 +117,9 @@ const AboutMe = () => {
             </p>
             <div className="mt-6 pt-4 border-t border-gray-600/30">
               <button className="text-white font-medium hover:text-gray-300 transition-colors duration-300 flex items-center group">
+                <a href='#leadSection'>
                 Learn More 
+                </a>
                 <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
               </button>
             </div>
@@ -165,7 +167,9 @@ const AboutMe = () => {
           Don’t wait to elevate your online presence. Book your consultation today and discover how a results-driven website from 4700 GFX Studios can increase traffic, build trust, and drive measurable growth. Click below to get started—your future customers are already searching.
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <a href='https://calendly.com/4700gfx/website-review-and-consultation' target='_blank'>
           📆 Get Your Free Consultation 📆
+        </a>
         </button>
       </div>
     </section>

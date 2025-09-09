@@ -51,7 +51,9 @@ const Hero = () => {
             <button
               className='bg-gray-600 text-white my-3 lg:mb-0 lg:mr-3 w-full lg:w-1/3 p-2 md:p-3 text-sm md:text-base rounded-full hover:bg-white hover:text-black hover:bg-grey-900 transition duration-300'
             >
-            Schedule A Call 📞
+            <a href='https://calendly.com/4700gfx/website-review-and-consultation' target='_blank'>
+              Schedule A Call 📞
+            </a>
             </button>
 
           
