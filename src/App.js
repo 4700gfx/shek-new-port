@@ -16,6 +16,7 @@ import LeadMagnetsAndForms from './components/LeadMagnetsAndForms';
 import WebsiteAuditLanding from './components/WebsiteAuditLanding';
 import ChecklistLanding from './components/ChecklistLanding';
 import EbookLanding from './components/EbookLanding';
+import WebsiteSuccessChecklist from './components/WebsiteSuccessChecklist';
 
 // Main Home Page Component
 const HomePage = () => (
@@ -62,7 +63,7 @@ function App() {
           
           {/* Lead magnet landing pages */}
           <Route path="/website-audit" element={<WebsiteAuditLanding />} />
-          <Route path="/checklist" element={<ChecklistLanding />} />
+          <Route path="/checklist" element={<WebsiteSuccessChecklist />} />
           <Route path="/transformation-guide" element={<EbookLanding />} />
         </Routes>
         <Footer />

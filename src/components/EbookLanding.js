@@ -12,7 +12,7 @@ const EbookLanding = () => {
   const observerRef = useRef(null);
 
   // Google Sheets Integration Configuration
-  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfzdBiXPdlcrYXqejJdEIIn5QWlA4yYWNhCa5CR2l7j_LaF9KI4Cm7ykR2kKUBwYML3w/exec';
+  const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzd67WWppQItadexIe20B7ifM3M27SctC1ZV5w7u3cQQM38O4_zaxdNHEayxyBJqnb63A/exec';
 
   useEffect(() => {
     // Create intersection observer

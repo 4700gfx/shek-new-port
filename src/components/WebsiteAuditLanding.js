@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const WebsiteAuditLanding = () => {
   const [sectionsInView, setSectionsInView] = useState({});
-  const [leadMagnetEmail, setLeadMagnetEmail] = useState({ name: '', email: '' });
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [selectedLeadMagnet, setSelectedLeadMagnet] = useState(null);
+
+  // Calendly URL
+  const CALENDLY_URL = "https://calendly.com/4700gfx/website-review-and-consultation";
 
   // Create refs for each section
   const sectionRefs = useRef({});
@@ -44,38 +44,23 @@ const WebsiteAuditLanding = () => {
     }
   };
 
-  const handleLeadMagnetEmailChange = (e) => {
-    setLeadMagnetEmail({
-      ...leadMagnetEmail,
-      [e.target.name]: e.target.value
-    });
-  };
-
   const handleMainAuditSubmit = () => {
-    if (!leadMagnetEmail.name || !leadMagnetEmail.email) {
-      alert('Please provide your name and email');
-      return;
-    }
-    
-    console.log('Website audit requested:', leadMagnetEmail);
-    setShowSuccessModal(true);
-    setLeadMagnetEmail({ name: '', email: '' });
+    // Open Calendly link in a new tab
+    window.open(CALENDLY_URL, '_blank');
   };
 
-  const handleOtherLeadMagnetSubmit = () => {
-    if (!leadMagnetEmail.name || !leadMagnetEmail.email) {
-      alert('Please provide your name and email');
-      return;
-    }
-    
-    console.log('Lead magnet requested:', { type: selectedLeadMagnet, ...leadMagnetEmail });
-    alert('Download started! Check your email.');
-    setSelectedLeadMagnet(null);
-    setLeadMagnetEmail({ name: '', email: '' });
+  const handleBookConsultationClick = () => {
+    // Open Calendly link in a new tab
+    window.open(CALENDLY_URL, '_blank');
   };
 
   const handleLeadMagnetClick = (magnetType) => {
-    setSelectedLeadMagnet(magnetType);
+    // Navigate to the appropriate landing page
+    if (magnetType === 'checklist') {
+      window.open('/checklist', '_blank');
+    } else if (magnetType === 'ebook') {
+      window.open('/transformation-guide', '_blank');
+    }
   };
 
   const otherLeadMagnets = [
@@ -121,18 +106,18 @@ const WebsiteAuditLanding = () => {
             </div>
             
             <h1 className="font-roboto font-bold text-4xl md:text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent leading-tight">
-              Free Website Audit
+              Free Website Review & Consultation
             </h1>
             
             <div className="relative">
               <p className="text-xl md:text-2xl text-gray-200 mb-4 font-medium">
-                Mobile & Desktop Analysis
+                1-on-1 Strategy Session
               </p>
               <div className="absolute -inset-1 bg-gradient-to-r from-gray-500/20 to-gray-700/20 blur-sm rounded-lg"></div>
             </div>
             
             <p className="text-gray-100 text-md md:text-sm max-w-3xl mx-auto mb-12 leading-relaxed backdrop-blur-sm">
-              Get a comprehensive professional audit of your website's performance, user experience, and conversion potential with detailed recommendations. This will come through a video recording via Loom - completely free, no strings attached.
+              Book a personalized 30-minute consultation where we'll review your website live and provide actionable recommendations for improving performance, user experience, and conversions. No strings attached - just valuable insights to help grow your business.
             </p>
 
             {/* Main CTA Form with enhanced styling */}
@@ -140,34 +125,21 @@ const WebsiteAuditLanding = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-500 to-gray-700 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
               <div className="relative bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-2xl mb-12 max-w-2xl mx-auto backdrop-blur-sm border border-gray-200/50">
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent mb-6">
-                  Get Your Free Website Audit
+                  Schedule Your Free Website Review
                 </h3>
                 <div className="space-y-4">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="name"
-                      value={leadMagnetEmail.name}
-                      onChange={handleLeadMagnetEmailChange}
-                      placeholder="Your Full Name"
-                      className="w-full p-4 border-2 border-gray-200 bg-white/90 text-gray-800 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 placeholder-gray-500"
-                    />
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full opacity-0 animate-pulse"></div>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+                    <div className="flex items-center gap-2 text-blue-700">
+                      <span>📅</span>
+                      <span className="font-medium text-sm">30-minute live consultation</span>
                     </div>
-                  </div>
-                  
-                  <div className="relative">
-                    <input
-                      type="email"
-                      name="email"
-                      value={leadMagnetEmail.email}
-                      onChange={handleLeadMagnetEmailChange}
-                      placeholder="your@email.com"
-                      className="w-full p-4 border-2 border-gray-200 bg-white/90 text-gray-800 rounded-xl focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 transition-all duration-300 placeholder-gray-500"
-                    />
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full opacity-0 animate-pulse"></div>
+                    <div className="flex items-center gap-2 text-blue-700 mt-1">
+                      <span>💡</span>
+                      <span className="font-medium text-sm">Personalized recommendations</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-blue-700 mt-1">
+                      <span>🎯</span>
+                      <span className="font-medium text-sm">Action plan for improvement</span>
                     </div>
                   </div>
                   
@@ -176,12 +148,12 @@ const WebsiteAuditLanding = () => {
                     className="relative w-full bg-gradient-to-r from-gray-700 to-black text-white font-bold py-4 px-8 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] flex items-center justify-center gap-2 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-800 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative">🎯</span>
-                    <span className="relative">Get My Free Audit Now!</span>
+                    <span className="relative">📅</span>
+                    <span className="relative">Book My Free Consultation Now!</span>
                   </button>
                 </div>
                 <p className="text-gray-600 mt-4 text-sm text-center flex items-center justify-center gap-2">
-                  <span>🔒</span> Your information is secure. We'll deliver your audit within 48 hours.
+                  <span>🔒</span> Choose your preferred time slot. No commitment required.
                 </p>
               </div>
             </div>
@@ -200,7 +172,7 @@ const WebsiteAuditLanding = () => {
         }`}>
           <div className="text-center mb-16">
             <h2 className="font-roboto font-bold text-3xl lg:text-5xl mb-4 bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent">
-              What You'll Get in Your Audit
+              What We'll Cover in Your Consultation
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-gray-500 to-gray-700 mx-auto rounded-full"></div>
           </div>
@@ -209,38 +181,38 @@ const WebsiteAuditLanding = () => {
             {[
               {
                 icon: "📱",
-                title: "Mobile Responsiveness Analysis",
-                description: "Complete evaluation of how your site performs across all devices and screen sizes",
+                title: "Mobile Responsiveness Review",
+                description: "Live evaluation of how your site performs across different devices and screen sizes",
                 color: "from-gray-400 to-gray-600"
               },
               {
                 icon: "⚡",
-                title: "Page Speed & Performance",
-                description: "Detailed analysis of loading times and recommendations for speed improvements",
+                title: "Page Speed Analysis",
+                description: "Real-time testing of loading times with immediate improvement recommendations",
                 color: "from-gray-500 to-gray-700"
               },
               {
                 icon: "🎨",
-                title: "User Experience Review",
-                description: "Professional assessment of navigation, layout, and overall user journey",
+                title: "User Experience Assessment",
+                description: "Professional review of navigation, layout, and overall user journey with you",
                 color: "from-gray-600 to-gray-800"
               },
               {
                 icon: "🔍",
-                title: "SEO Quick Assessment",
-                description: "Basic evaluation of your site's search engine optimization potential",
+                title: "SEO Quick Review",
+                description: "On-the-spot evaluation of your site's search engine optimization opportunities",
                 color: "from-gray-400 to-gray-700"
               },
               {
                 icon: "💰",
-                title: "Conversion Optimization",
-                description: "Identify opportunities to turn more visitors into customers",
+                title: "Conversion Optimization Tips",
+                description: "Identify specific opportunities to turn more visitors into customers",
                 color: "from-gray-500 to-gray-800"
               },
               {
                 icon: "🛠️",
-                title: "Action Plan & Priorities",
-                description: "Clear roadmap with prioritized recommendations for maximum impact",
+                title: "Prioritized Action Plan",
+                description: "Walk away with a clear roadmap of next steps for maximum impact",
                 color: "from-gray-600 to-gray-900"
               }
             ].map((item, index) => (
@@ -279,18 +251,18 @@ const WebsiteAuditLanding = () => {
           <div className="relative bg-gray-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-700/50">
             <div className="text-center mb-8">
               <h2 className="font-roboto font-bold text-2xl sm:text-4xl text-gray-100 mb-4">
-                Proven Results from Our Audits
+                Proven Results from Our Consultations
               </h2>
               <p className="text-gray-300 text-base sm:text-md px-12">
-                Our comprehensive audits have helped hundreds of businesses identify critical issues and opportunities for growth.
+                Our personalized website reviews have helped hundreds of businesses identify critical issues and opportunities for growth.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               {[
-                { number: "500+", label: "Websites Audited and Optimized" },
+                { number: "500+", label: "Websites Reviewed and Optimized" },
                 { number: "25-75%", label: "Average Conversion Rate Improvement" },
-                { number: "48 Hours", label: "Average Delivery Time" }
+                { number: "30 Min", label: "Focused, Value-Packed Sessions" }
               ].map((stat, index) => (
                 <div key={index} className="p-4 group">
                   <div className="text-4xl font-bold bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
@@ -348,8 +320,8 @@ const WebsiteAuditLanding = () => {
                   </p>
                   <div className="mt-auto pt-4 border-t border-gray-300/50">
                     <button className="text-gray-800 font-medium hover:text-gray-600 transition-colors duration-300 flex items-center group w-full justify-center">
-                      <span className="mr-2">📥</span>
-                      Download Free 
+                      <span className="mr-2">🔗</span>
+                      Learn More 
                       <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                     </button>
                   </div>
@@ -373,94 +345,17 @@ const WebsiteAuditLanding = () => {
             Ready to Discover What's Holding Your Website Back?
           </h2>
           <p className="text-gray-300 text-md mb-8 max-w-2xl mx-auto">
-            Get your comprehensive website audit today and start turning more visitors into customers. No cost, no commitment - just valuable insights.
+            Book your free 30-minute consultation today and get personalized recommendations to start turning more visitors into customers.
           </p>
           <button 
-            onClick={() => document.getElementById('hero-section').scrollIntoView({ behavior: 'smooth' })}
+            onClick={handleBookConsultationClick}
             className="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="relative">Get My Free Audit Now</span>
+            <span className="relative">Book My Free Consultation</span>
           </button>
         </div>
       </section>
-
-      {/* Success Modal */}
-      {showSuccessModal && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="relative group">
-            <div className="absolute inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl blur opacity-40"></div>
-            <div className="relative bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-2xl border border-green-200/50">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 relative">
-                <span className="text-3xl animate-bounce">✅</span>
-                <div className="absolute inset-0 bg-green-400/20 rounded-full animate-ping"></div>
-              </div>
-              <h3 className="font-roboto text-2xl font-bold text-gray-800 mb-4">Audit Request Received!</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Thank you! We'll analyze your website and send your comprehensive audit via Loom video within 48 hours. Check your email for updates.
-              </p>
-              <button
-                onClick={() => setShowSuccessModal(false)}
-                className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Other Lead Magnet Modal */}
-      {selectedLeadMagnet && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="relative group">
-            <div className="absolute inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-40"></div>
-            <div className="relative bg-white rounded-2xl p-8 max-w-md w-full text-center shadow-2xl border border-blue-200/50">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">📥</span>
-              </div>
-              <h3 className="font-roboto text-2xl font-bold text-gray-800 mb-4">Almost There!</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                To access this resource, please provide your email address. We'll send it to you instantly.
-              </p>
-              
-              <div className="space-y-4 mb-6">
-                <input
-                  type="text"
-                  name="name"
-                  value={leadMagnetEmail.name}
-                  onChange={handleLeadMagnetEmailChange}
-                  placeholder="Your Name"
-                  className="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={leadMagnetEmail.email}
-                  onChange={handleLeadMagnetEmailChange}
-                  placeholder="your@email.com"
-                  className="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                />
-              </div>
-
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setSelectedLeadMagnet(null)}
-                  className="flex-1 bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-300 transition-all duration-300"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleOtherLeadMagnetSubmit}
-                  className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
-                >
-                  Send It Now!
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
