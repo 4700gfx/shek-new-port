@@ -15,7 +15,7 @@ const Navbar = () => {
     home: "Home",
     techSection: "Tech Section",
     aboutMe: "About Me",
-    experience: "Experience",
+    custom: "Custom",
     projects: "Projects",
   };
 
