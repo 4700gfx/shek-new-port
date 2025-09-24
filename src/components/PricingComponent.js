@@ -37,7 +37,7 @@ const PricingComponent = () => {
   const pricingTiers = [
     {
       name: "Starter",
-      price: "$175 - $250",
+      price: "$275 - $400",
       timeline: "1-2 Weeks",
       description: "Ideal for freelancers and local businesses with simple needs. This plan includes a single landing page designed to showcase your business, attract visitors, and make a strong first impression online.",
       features: [
@@ -56,7 +56,7 @@ const PricingComponent = () => {
     },
     {
       name: "Standard",
-      price: "$275 - $350",
+      price: "$450 - $625",
       timeline: "3-4 Weeks",
       description: "Perfect for service-based businesses launching their online presence. This plan helps you connect with your audience by integrating booking systems, social media, and other key touchpoints.",
       features: [
@@ -74,8 +74,8 @@ const PricingComponent = () => {
     },
     {
       name: "Growth",
-      price: "$425 - $700",
-      timeline: "4-6 Weeks",
+      price: "$700 - $950",
+      timeline: "4-8 Weeks",
       description: "Designed for growing brands expanding their services or product lines. Includes custom integrations such as Shopify, Acuity, and more to streamline operations and enhance your customers’ experience",
       features: [
         "5-7 Custom Designed Pages",
@@ -93,7 +93,7 @@ const PricingComponent = () => {
     },
     {
       name: "Enterprise",
-      price: "$850+",
+      price: "$1,000+",
       timeline: "8+ Weeks",
       description: "A complete digital transformation for established businesses. This plan includes branding, marketing, social media promotion, and more. It can also encompass mobile applications and other advanced solutions. Detailed offerings are tailored to your needs during a personalized consultation.",
       features: [

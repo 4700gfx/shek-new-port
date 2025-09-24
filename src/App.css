@@ -51,5 +51,6 @@ html {
 
 /* Ensure the hero section has sufficient top margin when menu is open */
 .hero-container {
+  margin-top: 100px;
   transition: margin-top 0.3s ease-in-out;
 }
