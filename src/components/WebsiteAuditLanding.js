@@ -4,7 +4,7 @@ const WebsiteAuditLanding = () => {
   const [sectionsInView, setSectionsInView] = useState({});
 
   // Calendly URL
-  const CALENDLY_URL = "https://calendly.com/4700gfx/website-review-and-consultation";
+  const CALENDLY_URL = "https://calendly.com/4700gfx/4700-gfx-discovery-maintenance-kick-off-call";
 
   // Create refs for each section
   const sectionRefs = useRef({});
