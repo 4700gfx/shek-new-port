@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaEnvelope, FaPhone, FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa';
 
 const Footer = () => {
   const [hoveredLink, setHoveredLink] = useState(null);
+  const location = useLocation();
+  const isOnLandingPage = location.pathname !== '/';
 
-  const quickLinks = [
-    { name: 'Home', href: '#home', icon: '🏠' },
-    { name: 'About', href: '#aboutMe', icon: '👋' },
-    { name: 'Services', href: '#techSection', icon: '⚡' },
-    { name: 'Projects', href: '#projects', icon: '🎨' },
-    { name: 'Contact', href: '#contact', icon: '📧' }
+  // Navigation tabs matching Navbar structure
+  const navigationTabs = {
+    home: { name: "Home", icon: "🏠" },
+    techSection: { name: "Tech Section", icon: "⚡" },
+    aboutMe: { name: "About Me", icon: "👋" },
+    custom: { name: "Custom", icon: "🎨" },
+    projects: { name: "Projects", icon: "🚀" },
+  };
+
+  // Lead magnets matching Navbar structure
+  const leadMagnets = [
+    { path: "/website-audit", title: "Free Website Audit", icon: "🌐" },
+    { path: "/checklist", title: "Success Checklist", icon: "✅" },
+    { path: "/transformation-guide", title: "4-Week Transformation", icon: "📖" }
+  ];
+
+  // Quick links for landing page
+  const landingPageLinks = [
+    { name: 'Back to Home', href: '/', icon: '🏠', isLink: true }
   ];
 
   const services = [
@@ -34,6 +50,48 @@ const Footer = () => {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Render navigation links based on current page
+  const renderNavigationLinks = () => {
+    if (isOnLandingPage) {
+      // Show "Back to Home" link when on landing pages
+      return landingPageLinks.map((link, index) => (
+        <Link
+          key={index}
+          to={link.href}
+          className="flex items-center justify-center lg:justify-start gap-3 text-gray-300 hover:text-white transition-all duration-300 group p-2 rounded-lg hover:bg-gray-700/30"
+          onMouseEnter={() => setHoveredLink(index)}
+          onMouseLeave={() => setHoveredLink(null)}
+        >
+          <span className={`text-lg transition-all duration-300 ${hoveredLink === index ? 'scale-125 rotate-12' : ''}`}>
+            {link.icon}
+          </span>
+          <span className="group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
+            <span className="transition-transform duration-300 group-hover:-translate-x-1">←</span>
+            {link.name}
+          </span>
+        </Link>
+      ));
+    } else {
+      // Show section navigation links when on main page
+      return Object.keys(navigationTabs).map((tabKey, index) => (
+        <a
+          key={index}
+          href={`#${tabKey}`}
+          className="flex items-center justify-center lg:justify-start gap-3 text-gray-300 hover:text-white transition-all duration-300 group p-2 rounded-lg hover:bg-gray-700/30"
+          onMouseEnter={() => setHoveredLink(index)}
+          onMouseLeave={() => setHoveredLink(null)}
+        >
+          <span className={`text-lg transition-all duration-300 ${hoveredLink === index ? 'scale-125 rotate-12' : ''}`}>
+            {navigationTabs[tabKey].icon}
+          </span>
+          <span className="group-hover:translate-x-2 transition-transform duration-300">
+            {navigationTabs[tabKey].name}
+          </span>
+        </a>
+      ));
+    }
   };
 
   return (
@@ -82,51 +140,44 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links - Enhanced */}
+            {/* Navigation Links - Enhanced to match Navbar */}
             <div className="text-center lg:text-left">
               <h4 className="text-white font-bold text-lg mb-6 flex items-center justify-center lg:justify-start gap-2">
                 <span className="text-purple-400">🔗</span>
-                Quick Links
+                {isOnLandingPage ? 'Navigation' : 'Quick Links'}
               </h4>
               <div className="space-y-3">
-                {quickLinks.map((link, index) => (
-                  <a 
-                    key={index}
-                    href={link.href}
-                    className="flex items-center justify-center lg:justify-start gap-3 text-gray-300 hover:text-white transition-all duration-300 group p-2 rounded-lg hover:bg-gray-700/30"
-                    onMouseEnter={() => setHoveredLink(index)}
-                    onMouseLeave={() => setHoveredLink(null)}
-                  >
-                    <span className={`text-lg transition-all duration-300 ${hoveredLink === index ? 'scale-125 rotate-12' : ''}`}>
-                      {link.icon}
-                    </span>
-                    <span className="group-hover:translate-x-2 transition-transform duration-300">
-                      {link.name}
-                    </span>
-                  </a>
-                ))}
+                {renderNavigationLinks()}
               </div>
             </div>
 
-            {/* Services - New Section */}
+            {/* Free Resources - Matching Navbar Lead Magnets */}
             <div className="text-center lg:text-left">
               <h4 className="text-white font-bold text-lg mb-6 flex items-center justify-center lg:justify-start gap-2">
-                <span className="text-pink-400">⚡</span>
-                Our Services
+                <span className="text-pink-400">🎁</span>
+                Free Resources
               </h4>
               <div className="space-y-3">
-                {services.map((service, index) => (
-                  <div 
+                {leadMagnets.map((magnet, index) => (
+                  <Link
                     key={index}
-                    className="flex items-center justify-center lg:justify-start gap-3 text-gray-300 hover:text-white transition-all duration-300 group p-2 rounded-lg hover:bg-gray-700/30"
+                    to={magnet.path}
+                    className="flex items-center justify-center lg:justify-start gap-3 text-gray-300 hover:text-white transition-all duration-300 group p-2 rounded-lg hover:bg-gray-700/30 hover:bg-gradient-to-r hover:from-purple-600/10 hover:to-pink-600/10 border border-transparent hover:border-purple-500/20"
+                    onMouseEnter={() => setHoveredLink(`resource-${index}`)}
+                    onMouseLeave={() => setHoveredLink(null)}
                   >
-                    <span className="text-lg group-hover:scale-125 transition-all duration-300">
-                      {service.icon}
+                    <span className={`text-lg transition-all duration-300 ${hoveredLink === `resource-${index}` ? 'scale-125 rotate-12' : ''}`}>
+                      {magnet.icon}
                     </span>
-                    <span className="group-hover:translate-x-2 transition-transform duration-300">
-                      {service.name}
+                    <div className="flex-1 text-left">
+                      <span className="block text-sm font-medium group-hover:translate-x-2 transition-transform duration-300">
+                        {magnet.title}
+                      </span>
+                    </div>
+                    <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-purple-400 text-sm">
+                      →
                     </span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -165,12 +216,13 @@ const Footer = () => {
                   Let's create something amazing together
                 </p>
                 <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25 text-sm">
-                <a
-                href='https://calendly.com/4700gfx/4700-gfx-discovery-maintenance-kick-off-call'
-                target='_blank'
-                >
-                Get Your Free Consultation
-                </a>
+                  <a
+                    href='https://calendly.com/4700gfx/4700-gfx-discovery-maintenance-kick-off-call'
+                    target='_blank'
+                    rel="noopener noreferrer"
+                  >
+                    Get Your Free Consultation
+                  </a>
                 </button>
               </div>
             </div>
