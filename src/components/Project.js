@@ -183,7 +183,13 @@ const Project = () => {
         </p>
         <button className="bg-gradient-to-r from-gray-500 to-black text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 mx-auto">
           <span>🚀</span>
-          Start Your Project Today
+          <a
+           href='https://calendly.com/4700gfx/4700-gfx-discovery-maintenance-kick-off-call' 
+           target='_blank'
+          
+          >
+            Start Your Project
+          </a>
         </button>
       </div>
     </section>

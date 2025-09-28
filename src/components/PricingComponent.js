@@ -37,17 +37,21 @@ const PricingComponent = () => {
   const pricingTiers = [
     {
       name: "Starter",
-      price: "$275 - $400",
+      price: "$275 - $350",
       timeline: "1-2 Weeks",
       description: "Ideal for freelancers and local businesses with simple needs. This plan includes a single landing page designed to showcase your business, attract visitors, and make a strong first impression online.",
       features: [
-        "Single Page (Home, About, Contact)",
+        "Single Page Landing Site (Home, About, Contact)",
         "Mobile Responsive Design",
-        "Domain Launch Implementation",
-        "Website Hosting",
-        "Branding Kit",
+        "Booking Site Intergration",
+        "Domain Hosting Services",
+        "Basic SEO Implementation",
+        "Google Business Setup",
+        "Website Hosting Services",
+        "Basic Branding Kit",
+        "14-Days of Post Launch Updates/Maintenance",
         "15% Off on Future Projects",
-        "No Post-Launch Updates"
+
       ],
       popular: false,
       gradient: "from-gray-700 to-gray-800",
@@ -56,16 +60,20 @@ const PricingComponent = () => {
     },
     {
       name: "Standard",
-      price: "$450 - $625",
+      price: "$375 - $550",
       timeline: "3-4 Weeks",
       description: "Perfect for service-based businesses launching their online presence. This plan helps you connect with your audience by integrating booking systems, social media, and other key touchpoints.",
       features: [
-        "Single Page Website or Landing Page",
+        "1-3 Page Custom Website",
+        "Shopify/e-Commerce Intergration",
+        "Booking Site Intergration",
         "Mobile Responsive Design",
         "Basic SEO Implementation",
-        "20% Off on Future Projects",
+        "Domain Hosting Services",
+        "Basic Branding Guide",
         "Domain Launch Implementation",
-        "30-Days of Post-Launch Updates"
+        "25% Off on Future Projects",
+        "30-Days of Post Launch Updates/Maintenance"
       ],
       popular: true,
       gradient: "from-gray-800 to-gray-900",
@@ -74,17 +82,18 @@ const PricingComponent = () => {
     },
     {
       name: "Growth",
-      price: "$700 - $950",
+      price: "$650 - $850",
       timeline: "4-8 Weeks",
       description: "Designed for growing brands expanding their services or product lines. Includes custom integrations such as Shopify, Acuity, and more to streamline operations and enhance your customers’ experience",
       features: [
         "5-7 Custom Designed Pages",
-        "Advanced SEO & Analytics Setup",
-        "Full Branding Kit (Logo, Colors, Fonts)",
-        "Shopify/Acuqity Intergration",
+        "Shopify/e-Commerce Intergration",
+        "Advanced SEO Setup",
+        "Google Business & Anayltics Setup",
+        "Full Branding Kit (Logo, Colors, Typography)",
+        "e-Commerce/Booking Site Intergration",
         "Domain Launch Implementation",
-        "Analytics Dashboard Setup",
-        "3-6 Months of Post-Launch Updates"
+        "90 Days of Post-Launch Updates"
       ],
       popular: false,
       gradient: "from-gray-600 to-gray-700",
@@ -95,11 +104,12 @@ const PricingComponent = () => {
       name: "Enterprise",
       price: "$1,000+",
       timeline: "8+ Weeks",
-      description: "A complete digital transformation for established businesses. This plan includes branding, marketing, social media promotion, and more. It can also encompass mobile applications and other advanced solutions. Detailed offerings are tailored to your needs during a personalized consultation.",
+      description: "A complete digital transformation for established businesses. This plan includes branding, marketing, social media promotion, and more. It can also encompass mobile applications and other advanced solutions. More details can be reviewed during our Free Consultations",
       features: [
         "8-10 Custom Pages",
-        "Fully Integrated E-Commerce",
-        "Full Branding Kit & Identity",
+        "Mobile Application Development",
+        "Full Branding Kit & Brand Strategy",
+        "Shopify/e-Commerce Intergration",
         "Advanced SEO & Analytics",
         "6 Months of Updates & Support",
         "Priority Support & Consultation"
@@ -194,7 +204,10 @@ const PricingComponent = () => {
 
               {/* CTA Button */}
               <button className={`w-full bg-gradient-to-r ${tier.gradient} hover:${tier.hoverGradient} text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}>
-              <a href='https://calendly.com/4700gfx/website-review-and-consultation' target='_blank'>
+              <a 
+              href='https://calendly.com/4700gfx/4700-gfx-discovery-maintenance-kick-off-call'
+              target='_blank'
+              >
                 Get Started 
               </a>
               </button>
@@ -216,7 +229,10 @@ const PricingComponent = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button className="bg-white hover:bg-gray-100 text-gray-900 font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <a href='https://calendly.com/4700gfx/website-review-and-consultation' target='_blank'>
+            <a
+              href='https://calendly.com/4700gfx/4700-gfx-discovery-maintenance-kick-off-call'
+              target='_blank'
+            >
               Schedule Free Consultation
             </a>
           </button>

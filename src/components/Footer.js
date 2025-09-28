@@ -165,7 +165,12 @@ const Footer = () => {
                   Let's create something amazing together
                 </p>
                 <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25 text-sm">
-                  Get Free Consultation
+                <a
+                href='https://calendly.com/4700gfx/4700-gfx-discovery-maintenance-kick-off-call'
+                target='_blank'
+                >
+                Get Your Free Consultation
+                </a>
                 </button>
               </div>
             </div>
